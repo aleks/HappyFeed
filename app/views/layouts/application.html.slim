@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title HappyFeed
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="apple-mobile-web-app-capable" content="yes"
+    meta name="apple-mobile-web-app-status-bar-style" content="black"
+
+  body
+    - if logged_in?
+      span Logged in as: #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
+    hr
+
+    = yield
