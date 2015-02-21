@@ -1,0 +1,5 @@
+- unless logged_in?
+  = form_tag login_path, method: :post do
+    = text_field_tag :email
+    = password_field_tag :password
+    = submit_tag 'Login'

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  root 'auth#login'
+
+  match 'setup' => 'setup#setup', via: [:get, :post], as: :setup
+
+  match 'login' => 'auth#login', via: [:get, :post], as: :login
+  delete 'login' => 'auth#logout', as: :logout
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
