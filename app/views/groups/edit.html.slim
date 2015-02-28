@@ -1,0 +1,5 @@
+h1 Edit Group
+= render 'form'
+hr
+p = link_to 'back', groups_path
+p = link_to 'Delete this Group', group_path(@group.id), method: :delete if !@group.default?

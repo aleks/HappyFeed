@@ -1,0 +1,5 @@
+h1 Edit Feed
+= render 'form'
+hr
+p = link_to 'back', feeds_path
+p = link_to 'unsubscribe', feed_path(@feed.id), method: :delete

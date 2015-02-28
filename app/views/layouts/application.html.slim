@@ -12,6 +12,7 @@ html
 
   body
     - if logged_in?
+      span #{link_to 'Feeds', feeds_path} | #{link_to 'Groups', groups_path} | 
       span Logged in as: #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
     hr
 

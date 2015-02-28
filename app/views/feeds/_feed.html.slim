@@ -1,0 +1,6 @@
+div.feed
+  h2 = feed.title
+  span In: #{feed.group.title}
+  p = feed.feed_url
+  p = link_to 'edit', edit_feed_path(feed.id)
+  hr
