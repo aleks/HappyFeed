@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20150301001136) do
     t.boolean  "is_saved"
     t.boolean  "is_read"
     t.datetime "created_on_time"
-    t.datetime "published_at"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

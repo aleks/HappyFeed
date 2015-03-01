@@ -36,7 +36,8 @@ gem 'simple_form'
 # gem 'whenever'
 # gem 'sucker_punch'
 
-
+# Feed handling
+gem 'feedjira'
 
 group :development, :test do
   gem 'spring'

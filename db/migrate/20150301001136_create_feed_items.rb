@@ -9,7 +9,6 @@ class CreateFeedItems < ActiveRecord::Migration
       t.boolean :is_saved
       t.boolean :is_read
       t.datetime :created_on_time
-      t.datetime :published_at
 
       t.timestamps null: false
     end
