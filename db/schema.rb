@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221024635) do
+ActiveRecord::Schema.define(version: 20150301001136) do
+
+  create_table "feed_items", force: :cascade do |t|
+    t.integer  "feed_id"
+    t.string   "title"
+    t.string   "author"
+    t.string   "html"
+    t.string   "url"
+    t.boolean  "is_saved"
+    t.boolean  "is_read"
+    t.datetime "created_on_time"
+    t.datetime "published_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "user_id"
