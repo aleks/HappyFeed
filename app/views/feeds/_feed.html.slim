@@ -1,14 +1,12 @@
-div.feed
-  h2 = feed.title
-  span In: #{feed.group.title}
-  p = feed.feed_url
+.feed
+  h1 = link_to feed.title, (feed.site_url || feed.feed_url)
+  p In: #{feed.group.title}
   p = link_to 'edit', edit_feed_path(feed.id)
-  hr
 
-  ul
-    - if feed_items = feed.feed_items
-      - feed_items.each do |item|
-        li
-          h1 = item.title
-          h4 = item.author
-          div = item.html.html_safe
+  /ul
+  /  - if feed_items = feed.feed_items
+  /    - feed_items.each do |item|
+  /      li
+  /        h1 = item.title
+  /        h4 = item.author
+  /        div = item.html.html_safe

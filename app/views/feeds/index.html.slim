@@ -1,5 +1,8 @@
-h1 Add a new Feed
-= render 'form'
+.form-wrap
+  h3 Add a new Feed
+  = render 'form'
 
-- @feeds.each do |feed|
-  = render feed
+.feeds
+  ul
+    - @feeds.each do |feed|
+      li = render feed

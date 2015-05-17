@@ -11,9 +11,25 @@ html
     meta name="apple-mobile-web-app-status-bar-style" content="black"
 
   body
-    - if logged_in?
-      span #{link_to 'Feeds', feeds_path} | #{link_to 'Groups', groups_path} | 
-      span Logged in as: #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
-    hr
+    main role="main"
+      .content-wrap
 
-    = yield
+        .header
+          .auth
+            - if logged_in?
+              | #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
+          .logo = image_tag 'logo.png'
+          .clearfix
+
+        - if logged_in?
+          .navigation
+            ul
+              li = link_to 'Feeds', feeds_path
+              li = link_to 'Groups', groups_path
+
+        - if notice
+          .notice = notice
+        - if alert
+          .alert = alert
+
+        = yield

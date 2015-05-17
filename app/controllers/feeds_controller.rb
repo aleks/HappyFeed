@@ -13,14 +13,16 @@ class FeedsController < ApplicationController
   def update
     @feed = current_user.feeds.find(params[:id])
     if @feed.update_attributes(feed_params)
-      redirect_to feeds_path
+      redirect_to feeds_path, notice: 'Feed saved!'
     end
   end
 
   def create
     @feed = current_user.feeds.new(feed_params)
     if @feed.save
-      redirect_to feeds_path
+      redirect_to feeds_path, notice: 'Feed added!'
+    else
+      redirect_to feeds_path, alert: 'Error while saving! Already subscribed?'
     end
   end
 
