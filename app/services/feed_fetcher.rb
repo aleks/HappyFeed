@@ -59,6 +59,4 @@ class FeedFetcher
         true if summary == content
       end
     end
-
-
 end
