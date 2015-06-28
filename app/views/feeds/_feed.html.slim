@@ -1,12 +1,13 @@
 .feed
+  = link_to 'edit', edit_feed_path(feed.id), class: 'button'
   h1 = link_to feed.title, (feed.site_url || feed.feed_url)
-  p In: #{feed.group.title}
-  p = link_to 'edit', edit_feed_path(feed.id)
+  p
+    | In: 
+    span.tag = feed.group.title
 
   /ul
   /  - if feed_items = feed.feed_items
   /    - feed_items.each do |item|
   /      li
-  /        h1 = item.title
+  /        h1 = link_to item.title, item.url, target: 'blank'
   /        h4 = item.author
-  /        div = item.html.html_safe
