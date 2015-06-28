@@ -1,3 +1,4 @@
-div
-  = group.title
-  = link_to 'edit', edit_group_path(group.id), id: "edit-group-#{group.id}"
+.group
+  = link_to 'edit', edit_group_path(group.id), id: "edit-group-#{group.id}", class: 'button'
+  h1 = group.title
+  p #{group.feeds.count} Feeds

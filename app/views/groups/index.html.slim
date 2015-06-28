@@ -2,5 +2,7 @@
   h3 Add a new Group
   = render 'form'
 
-- @groups.each do |group|
-  = render group
+.groups
+  ul
+    - @groups.each do |group|
+      li = render group

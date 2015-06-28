@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      feed:
+        feed_url: 'Feed URL'

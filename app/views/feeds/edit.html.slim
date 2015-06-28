@@ -1,6 +1,4 @@
 .form-wrap
+  = link_to 'unsubscribe', feed_path(@feed.id), method: :delete, class: 'button'
   h3 Edit Feed
   = render 'form'
-
-  p = link_to 'back', feeds_path
-  p = link_to 'unsubscribe', feed_path(@feed.id), method: :delete
