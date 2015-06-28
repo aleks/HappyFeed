@@ -8,7 +8,7 @@ class FeedFetcher
   end
 
   def fetch
-    @fetched = Feedjira::Feed.fetch_and_parse(@feed.feed_url, user_agent: USER_AGENT, timeout: 30, max_redirects: 3)
+    @fetched = Feedjira::Feed.fetch_and_parse(@feed.feed_url)
 
     unless @fetched == 304 || @fetched == 200 || @fetched == 404
       update_feed_info!
