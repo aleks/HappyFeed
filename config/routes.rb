@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   match 'login' => 'auth#login', via: [:get, :post], as: :login
   delete 'login' => 'auth#logout', as: :logout
+
+
+  # Fever API Endpoint
+  get   '/fever' => 'fever#fever'
+  post  '/fever' => 'fever#fever'
 end
