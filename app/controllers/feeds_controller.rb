@@ -21,6 +21,7 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.new(feed_params)
     if @feed.save
       redirect_to feeds_path, notice: 'Feed added!'
+      FeedFetcher.new(@feed.id).fetch
     else
       redirect_to feeds_path, alert: 'Error while saving! Already subscribed?'
     end
