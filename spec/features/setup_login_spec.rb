@@ -27,8 +27,8 @@ feature 'Setup and Login' do
 
     visit login_path
 
-    fill_in 'email', with: 'user@happyfeed.tld'
-    fill_in 'password', with: 'password'
+    fill_in 'login_email', with: 'user@happyfeed.tld'
+    fill_in 'login_password', with: 'password'
 
     click_button 'Login'
 
@@ -42,8 +42,8 @@ feature 'Setup and Login' do
 
     visit login_path
 
-    fill_in 'email', with: 'user@happyfeed.tld'
-    fill_in 'password', with: 'password'
+    fill_in 'login_email', with: 'user@happyfeed.tld'
+    fill_in 'login_password', with: 'password'
 
     click_button 'Login'
 
