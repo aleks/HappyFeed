@@ -12,8 +12,4 @@
  *
  *= require_tree .
  *= require_self
- *= require 'layout'
- *= require 'forms'
- *= require 'feeds'
- *= require 'groups'
  */

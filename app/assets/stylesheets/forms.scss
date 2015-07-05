@@ -15,6 +15,15 @@
   .input {
     margin-bottom: 10px;
 
+    &.field_with_errors {
+      input {
+        border-color: #f00;
+      }
+      span.error {
+        color: #f00;
+      }
+    }
+
     label {
       display: block;
       width: 100%;

@@ -1,6 +1,8 @@
-h1 Setup
-= simple_form_for @user, url: setup_path do |f|
-  = f.input :email
-  = f.input :password, input_html: { size: 20 }
-  = f.input :password_confirmation, input_html: { size: 20 }
-  = f.submit
+.setup
+  .form-wrap
+    h3 Setup
+    = simple_form_for @user, url: setup_path do |f|
+      = f.input :email
+      = f.input :password, input_html: { size: 20 }
+      = f.input :password_confirmation, input_html: { size: 20 }
+      = f.button :submit

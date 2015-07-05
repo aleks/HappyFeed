@@ -1,5 +1,7 @@
-- unless logged_in?
-  = form_tag login_path, method: :post do
-    = text_field_tag :email
-    = password_field_tag :password
-    = submit_tag 'Login'
+.login
+  - unless logged_in?
+    .form-wrap
+      = simple_form_for :login, url: login_path do |f|
+        = f.input :email
+        = f.input :password
+        = f.submit 'Login', class: 'button'

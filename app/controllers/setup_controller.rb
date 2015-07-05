@@ -8,7 +8,7 @@ class SetupController < ApplicationController
       @user.attributes = setup_params.merge(auth_token: build_auth_token(setup_params[:email], setup_params[:password]))
       if @user.save
         login_user @user
-        redirect_to login_path
+        redirect_to feeds_path
       end
     end
   end
