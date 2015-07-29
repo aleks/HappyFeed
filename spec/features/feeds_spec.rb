@@ -15,17 +15,17 @@ feature 'Feeds Mangement' do
     visit feeds_path
     expect(page).to have_content 'Add a new Feed'
 
-    fill_in 'feed_feed_url', with: 'http://happyfeed.tld/feed'
+    fill_in 'feed_feed_url', with: 'http://heise.de'
     select 'Default Group', from: 'feed_group_id'
 
     click_button 'Create Feed'
 
-    expect(User.find(@user.id).feeds.first.feed_url).to eq 'http://happyfeed.tld/feed'
+    expect(User.find(@user.id).feeds.first.feed_url).to eq 'http://www.heise.de/newsticker/heise-atom.xml'
     expect(User.find(@user.id).feeds.first.group.title).to eq 'Default Group'
   end
 
   scenario 'Add a Feed to another Group (Edit)' do
-    FactoryGirl.create(:feed)
+    FactoryGirl.create(:feed, feed_url: 'http://heise.de')
     FactoryGirl.create(:group, title: 'My New Group')
 
     visit feeds_path
@@ -41,7 +41,7 @@ feature 'Feeds Mangement' do
   end
 
   scenario 'Unsubscribe from a Feed' do
-    FactoryGirl.create(:feed)
+    FactoryGirl.create(:feed, feed_url: 'http://heise.de')
 
     visit feeds_path
 
