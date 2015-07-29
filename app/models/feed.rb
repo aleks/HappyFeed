@@ -7,6 +7,15 @@ class Feed < ActiveRecord::Base
   validates :feed_url, uniqueness: { scope: :user_id, message: "should happen once per year" }
 
   before_create do
-    self.feed_url = self.feed_url.strip
+    self.feed_url = discover_feed_url(feed_url.strip)
   end
+
+  private
+
+    def discover_feed_url(feed_url)
+      feeds = Feedbag.find(feed_url)
+      feeds.each do |feed|
+        return feed if Feedbag.feed?(feed)
+      end
+    end
 end
