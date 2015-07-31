@@ -251,6 +251,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   factory_girl_rails
+  faraday
   feedbag
   feedjira
   ffaker

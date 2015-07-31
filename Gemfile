@@ -39,6 +39,7 @@ gem 'simple_form'
 # Feed handling
 gem 'feedjira'
 gem 'feedbag'
+gem 'faraday'
 
 group :development, :test do
   gem 'spring'

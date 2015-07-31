@@ -24,6 +24,31 @@ feature 'Feeds Mangement' do
     expect(User.find(@user.id).feeds.first.group.title).to eq 'Default Group'
   end
 
+  scenario 'Add a HTTPS Feed' do
+    visit feeds_path
+    expect(page).to have_content 'Add a new Feed'
+
+    fill_in 'feed_feed_url', with: 'https://www.theverge.com/rss/full.xml'
+    select 'Default Group', from: 'feed_group_id'
+
+    click_button 'Create Feed'
+
+    expect(User.find(@user.id).feeds.first.feed_url).to eq 'https://www.theverge.com/rss/full.xml'
+    expect(User.find(@user.id).feeds.first.group.title).to eq 'Default Group'
+  end
+
+  scenario 'Add a Feed with an invalid feed_url' do
+    visit feeds_path
+    expect(page).to have_content 'Add a new Feed'
+
+    fill_in 'feed_feed_url', with: 'http://asdopasdiaiopsmd.de'
+    select 'Default Group', from: 'feed_group_id'
+
+    click_button 'Create Feed'
+
+    expect(User.find(@user.id).feeds.first.present?).to be false
+  end
+
   scenario 'Add a Feed to another Group (Edit)' do
     FactoryGirl.create(:feed, feed_url: 'http://heise.de')
     FactoryGirl.create(:group, title: 'My New Group')
