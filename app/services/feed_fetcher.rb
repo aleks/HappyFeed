@@ -38,7 +38,7 @@ class FeedFetcher
         author: entry.author,
         html: fetched_content(entry),
         url: entry.url,
-        created_on_time: entry.published.to_datetime
+        created_on_time: entry.published.try(:to_datetime)
       )
     end
 
