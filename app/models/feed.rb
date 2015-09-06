@@ -4,7 +4,7 @@ class Feed < ActiveRecord::Base
   has_many :feed_items, dependent: :destroy
 
   validates :feed_url, :group_id, presence: true
-  validates :feed_url, uniqueness: { scope: :user_id, message: "should happen once per year" }
+  validates :feed_url, uniqueness: { scope: :user_id }
   validate :feed_url_is_reachable
 
   before_create do
