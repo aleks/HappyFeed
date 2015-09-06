@@ -7,9 +7,9 @@ class Feed < ActiveRecord::Base
   validates :feed_url, uniqueness: { scope: :user_id }
   validate :feed_url_is_reachable
 
-  before_create do
-    self.feed_url = discover_feed_url(feed_url.strip)
-  end
+  # before_save do
+  #   self.feed_url = discover_feed_url(feed_url.strip)
+  # end
 
   def feed_url_is_reachable
     err = 'Feed URL unreachable or error!'
@@ -22,12 +22,10 @@ class Feed < ActiveRecord::Base
     end
   end
 
-  private
-
-    def discover_feed_url(feed_url)
-      feeds = Feedbag.find(feed_url)
-      feeds.each do |feed|
-        return feed if Feedbag.feed?(feed)
-      end
+  def discover_feed_url
+    feeds = Feedbag.find(feed_url)
+    feeds.each do |feed|
+      return feed if Feedbag.feed?(feed)
     end
+  end
 end

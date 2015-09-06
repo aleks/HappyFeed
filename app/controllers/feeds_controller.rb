@@ -19,6 +19,8 @@ class FeedsController < ApplicationController
 
   def create
     @feed = current_user.feeds.new(feed_params)
+    @feed.feed_url = @feed.discover_feed_url
+
     if @feed.save
       FeedFetcher.new(@feed.id).fetch
       redirect_to feeds_path, notice: 'Feed added!'
