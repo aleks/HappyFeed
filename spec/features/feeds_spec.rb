@@ -20,7 +20,7 @@ feature 'Feeds Mangement' do
 
     click_button 'Create Feed'
 
-    expect(User.find(@user.id).feeds.first.feed_url).to eq 'http://www.heise.de/newsticker/heise-atom.xml'
+    expect(User.find(@user.id).feeds.first.feed_url).to eq 'http://www.heise.de/newsticker/heise.rdf'
     expect(User.find(@user.id).feeds.first.group.title).to eq 'Default Group'
   end
 
