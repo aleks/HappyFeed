@@ -3,6 +3,9 @@ class FeedItem < ActiveRecord::Base
 
   validates :feed_id, :title, :url, presence: true
 
+  scope :unread, -> { where(is_read: nil) }
+  scope :read, -> { where(is_read: true) }
+
   def mark_as(mark)
     case mark
       when 'read'

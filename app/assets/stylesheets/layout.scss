@@ -106,3 +106,24 @@ a {
     background: #f7f7f7;
   }
 }
+
+.pagination {
+  float: right;
+  padding: 20px 0 0 0;
+
+  .pagination_info {
+    font-size: 0.7em;
+    color: #888;
+    margin-right: 20px;
+  }
+
+  .button {
+    margin: 0 10px 0 0;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

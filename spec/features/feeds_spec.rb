@@ -78,4 +78,15 @@ feature 'Feeds Mangement' do
     expect(page).to have_content 'Add a new Feed' # after redirect to feeds_path
     expect(User.find(@user.id).feeds.count).to eq 0
   end
+
+  scenario 'it should have a FeedItem listing' do
+    feed = FactoryGirl.create(:feed, feed_url: 'http://heise.de', group_id: 1)
+    FeedFetcher.new(feed.id).fetch
+
+    visit feed_path(feed.id)
+
+    expect(page).to have_content 'heise online News'
+    expect(page).to have_content 'Next'
+    expect(feed.feed_items.any?).to be true
+  end
 end

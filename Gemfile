@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'simple_form'
+gem 'kaminari'
 
 # ElasticSearch
 # gem 'elasticsearch-model'

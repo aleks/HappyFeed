@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'auth#login'
 
-  resources :feeds, except: [:new]
+  resources :feeds, except: [:new] do
+    get 'page/:page', action: :show, on: :member
+  end
   resources :groups, except: [:new]
 
   match 'setup' => 'setup#setup', via: [:get, :post], as: :setup

@@ -1,0 +1,19 @@
+.feed_items
+
+  .pagination
+    span.pagination_info = page_entries_info @feed_items
+    = link_to_previous_page @feed_items, 'Prev', class: 'button'
+    = link_to_next_page @feed_items, 'Next', class: 'button'
+
+  h1 = @feed.title
+
+  ul
+    - @feed_items.each do |feed_item|
+      li class="#{feed_item.is_read ? 'read' : 'unread'}"
+        h2
+          - if feed_item.is_saved
+            span.is_saved = t('.is_saved')
+          = link_to feed_item.title, feed_item.url, target: 'blank'
+        .subline
+          .created_on_time = l(feed_item.created_on_time)
+          .word_count = feed_item.html.split(' ').count.to_s + t('.word_count')

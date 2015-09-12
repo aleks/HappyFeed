@@ -21,7 +21,14 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      default: '%d.%m.%Y'
   activerecord:
     attributes:
       feed:
         feed_url: 'Feed URL'
+  feeds:
+    show:
+      is_saved: 'Fav'
+      word_count: ' Words'
