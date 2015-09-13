@@ -1,0 +1,6 @@
+.group_navigation
+  - current_user.groups.each do |group|
+    .group_title = group.title
+    ul
+      - group.feeds.each do |feed|
+        li.group_item = link_to feed.title, feed

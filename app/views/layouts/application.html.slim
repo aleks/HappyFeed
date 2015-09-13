@@ -11,22 +11,22 @@ html
     meta name="apple-mobile-web-app-status-bar-style" content="black"
 
   body
-    main role="main"
-      .content-wrap
-
+    .all-wrap
+      .sidebar
         .header
-          .auth
-            - if logged_in?
-              | #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
           .logo = image_tag 'logo.png'
-          .clearfix
 
         - if logged_in?
+          .auth #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
           .navigation
             ul
               li = link_to 'Feeds', feeds_path
               li = link_to 'Groups', groups_path
 
+          = render 'layouts/sidebar/group_navigation'
+
+
+      .content-wrap
         - if notice
           .notice = notice
         - if alert

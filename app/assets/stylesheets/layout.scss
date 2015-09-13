@@ -6,6 +6,7 @@ html {
 }
 
 body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -29,55 +30,39 @@ a {
   clear: both;
 }
 
-.content-wrap {
+.all-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
 
-  .header {
-    height: 50px;
-    border-bottom: 1px solid #ddd;
+  .sidebar {
+    width: 300px;
+    border-right: 1px solid #ddd;
 
-    .auth {
-      float: right;
-      padding: 0 20px 0 0;
-      line-height: 50px;
-    }
+    .header {
+      .logo {
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
 
-    .logo {
-      padding: 10px 0px 0px 20px;
-      img {
-        width: 150px;
+        img {
+          width: 150px;
+          margin-top: 5px;
+        }
       }
     }
   }
 
-  .navigation {
-    height: 30px;
-    border-bottom: 1px solid #ddd;
-    background: #f7f7f7;
-
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        float: left;
-        list-style: none;
-
-        a {
-          display: block;
-          color: #E54D41;
-          font-weight: bold;
-          text-align: center;
-          line-height: 30px;
-          padding: 0 20px;
-          border-right: 1px solid #ddd;
-          text-decoration: none;
-
-          &:hover {
-            color: #fff;
-            background: #E54D41;
-          }
-        }
-      }
-    }
+  .content-wrap {
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 200px;
+    // overflow-y: auto;
   }
 }
 
@@ -107,31 +92,47 @@ a {
   }
 }
 
-.pagination {
-  @include clearfix;
+.options_header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  line-height: 53px;
+  border-bottom: 1px solid #ddd;
 
-  .button {
-    margin: 0 10px 0 0;
+  .pagination {
+    flex-grow: 1;
+    flex-basis: 200px;
+    text-align: right;
+
+    .button {
+      margin-right: 10px;
+    }
   }
-}
 
-.breadcrumb {
-  @include clearfix;
+  .breadcrumb {
+    flex-grow: 1;
+    @include clearfix;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      float: left;
+    ul {
       margin: 0;
-      padding: 0 10px;
-      border-right: 1px solid #ddd;
+      padding: 0;
+      list-style: none;
 
-      &:hover {
-        background: #f7f7f7;
+      li {
+        float: left;
+        margin: 0;
+        padding: 0 10px;
+        border-right: 1px solid #ddd;
+
+        &:hover {
+          background: #f7f7f7;
+        }
       }
     }
   }
 }
+
+

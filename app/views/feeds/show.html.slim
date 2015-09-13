@@ -1,15 +1,16 @@
-= div_for @feed
+.feed_show
 
-  .feed_header
+  .options_header
     .breadcrumb
       ul
         li = link_to 'Feeds', feeds_path
+        li = @feed.title
 
     .pagination
       = link_to_previous_page @feed_items, 'Prev', class: 'button'
       = link_to_next_page @feed_items, 'Next', class: 'button'
 
-  .feed_items_listing
+  .scoll_content
     ul
       - @feed_items.each do |feed_item|
         li class="#{feed_item.is_read ? 'read' : 'unread'}"

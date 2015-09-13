@@ -1,21 +1,22 @@
 = div_for @feed_item
 
-  .feed_item_header
+  .options_header
     .breadcrumb
       ul
         li = link_to 'Feeds', feeds_path
         li = link_to @feed_item.feed.title, feed_path(@feed_item.feed)
-        li = truncate @feed_item.title, length: 70
+        li = truncate @feed_item.title, length: 30
 
     .pagination
       = link_to t('previous'), feed_item_path(@feed_item.feed_id, @previous_item), class: 'button' if @previous_item
       = link_to t('next'), feed_item_path(@feed_item.feed_id, @next_item), class: 'button' if @next_item
 
 
-  .feed_item_content
-    .subline
-      = l @feed_item.created_on_time
+  .scoll_content
+    .full_content
+      .subline
+        = l @feed_item.created_on_time
 
-    h1 = @feed_item.title
+      h1 = @feed_item.title
 
-    = sanitize @feed_item.html
+      = sanitize @feed_item.html
