@@ -98,7 +98,7 @@ a {
 .button {
   font-size: 0.9em;
   padding: 6px 20px;
-  margin-top: 8px;
+  // margin-top: 8px;
   border-radius: 3px;
   border: 1px solid #ccc;
 
@@ -108,22 +108,30 @@ a {
 }
 
 .pagination {
-  float: right;
-  padding: 20px 0 0 0;
-
-  .pagination_info {
-    font-size: 0.7em;
-    color: #888;
-    margin-right: 20px;
-  }
+  @include clearfix;
 
   .button {
     margin: 0 10px 0 0;
   }
+}
 
-  &:after {
-    content: "";
-    display: block;
-    clear: both;
+.breadcrumb {
+  @include clearfix;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      float: left;
+      margin: 0;
+      padding: 0 10px;
+      border-right: 1px solid #ddd;
+
+      &:hover {
+        background: #f7f7f7;
+      }
+    }
   }
 }
