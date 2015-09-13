@@ -18,4 +18,13 @@ class FeedItem < ActiveRecord::Base
         update_attribute(:is_saved, nil)
     end
   end
+
+
+  def next_item
+    FeedItem.where('id > ? AND feed_id = ?', self.id, self.feed_id).limit(1).first
+  end
+
+  def previous_item
+    FeedItem.where('id < ? AND feed_id = ?', self.id, self.feed_id).last
+  end
 end

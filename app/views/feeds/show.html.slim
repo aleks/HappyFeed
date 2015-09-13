@@ -1,4 +1,4 @@
-.feed_items
+.feed_items_listing
 
   .pagination
     span.pagination_info = page_entries_info @feed_items
@@ -13,7 +13,7 @@
         h2
           - if feed_item.is_saved
             span.is_saved = t('.is_saved')
-          = link_to feed_item.title, feed_item.url, target: 'blank'
+          = link_to feed_item.title, feed_item_path(@feed, feed_item)
         .subline
           .created_on_time = l(feed_item.created_on_time)
           .word_count = feed_item.html.split(' ').count.to_s + t('.word_count')

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :feeds, except: [:new] do
     get 'page/:page', action: :show, on: :member
+
+    resources :feed_items, only: [:show], as: :items
   end
   resources :groups, except: [:new]
 

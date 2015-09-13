@@ -1,0 +1,11 @@
+.pagination
+  = link_to t('previous'), feed_item_path(@feed_item.feed_id, @previous_item), class: 'button' if @previous_item
+  = link_to t('next'), feed_item_path(@feed_item.feed_id, @next_item), class: 'button' if @next_item
+
+= div_for @feed_item
+  .subline
+    = l @feed_item.created_on_time
+
+  h1 = @feed_item.title
+
+  = sanitize @feed_item.html
