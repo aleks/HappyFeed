@@ -6,8 +6,6 @@ class CreateFeedItems < ActiveRecord::Migration
       t.string :author
       t.string :html
       t.string :url
-      t.boolean :is_saved
-      t.boolean :is_read
       t.datetime :created_on_time
 
       t.timestamps null: false

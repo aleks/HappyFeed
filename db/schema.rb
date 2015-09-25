@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301001136) do
+ActiveRecord::Schema.define(version: 20150925140540) do
+
+  create_table "feed_item_reads", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.integer  "feed_item_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "feed_item_reads", ["feed_id"], name: "index_feed_item_reads_on_feed_id"
+  add_index "feed_item_reads", ["feed_item_id"], name: "index_feed_item_reads_on_feed_item_id"
+  add_index "feed_item_reads", ["user_id"], name: "index_feed_item_reads_on_user_id"
+
+  create_table "feed_item_stars", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.integer  "feed_item_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "feed_item_stars", ["feed_id"], name: "index_feed_item_stars_on_feed_id"
+  add_index "feed_item_stars", ["feed_item_id"], name: "index_feed_item_stars_on_feed_item_id"
+  add_index "feed_item_stars", ["user_id"], name: "index_feed_item_stars_on_user_id"
 
   create_table "feed_items", force: :cascade do |t|
     t.integer  "feed_id"
@@ -19,16 +43,12 @@ ActiveRecord::Schema.define(version: 20150301001136) do
     t.string   "author"
     t.string   "html"
     t.string   "url"
-    t.boolean  "is_saved"
-    t.boolean  "is_read"
     t.datetime "created_on_time"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "feeds", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "group_id"
     t.string   "title"
     t.string   "feed_url"
     t.string   "site_url"
@@ -45,6 +65,16 @@ ActiveRecord::Schema.define(version: 20150301001136) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "user_feeds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_feeds", ["feed_id"], name: "index_user_feeds_on_feed_id"
+  add_index "user_feeds", ["user_id"], name: "index_user_feeds_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

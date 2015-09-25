@@ -125,11 +125,11 @@ puts api_response
     end
 
     def unread_item_ids
-      { unread_item_ids: FeedItem.joins(:feed).where(feeds: {user_id: @api_user.id}, feed_items: {is_read: nil}).map(&:id).join(',') }
+      { unread_item_ids: @api_user.unread_item_ids.join(',') }
     end
 
     def saved_item_ids
-      { saved_item_ids: FeedItem.joins(:feed).where(feeds: {user_id: @api_user.id}, feed_items: {is_saved: true}).map(&:id).join(',') }
+      { saved_item_ids: @api_user.saved_item_ids.join(',') }
     end
 
     def mark(params)
@@ -161,7 +161,7 @@ puts api_response
     end
 
     def mark_item(params)
-      FeedItem.find(params[:id]).mark_as(params[:as])
+      FeedItem.find(params[:id]).mark_as(params[:as], @api_user.id)
     end
 
 end

@@ -13,10 +13,11 @@
   .scoll_content
     ul
       - @feed_items.each do |feed_item|
-        li class="#{feed_item.is_read ? 'read' : 'unread'}"
+        /li class="#{feed_item.is_read ? 'read' : 'unread'}"
+        li
           h2
-            - if feed_item.is_saved
-              span.is_saved = t('.is_saved')
+            /- if feed_item.is_saved
+            /  span.is_saved = t('.is_saved')
             = link_to feed_item.title, feed_item_path(@feed, feed_item)
           .subline
             .created_on_time = l(feed_item.created_on_time)

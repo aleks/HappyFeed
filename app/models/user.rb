@@ -5,9 +5,29 @@ class User < ActiveRecord::Base
   validate :validate_email
 
   has_many :groups
-  has_many :feeds
+  has_many :user_feeds
+  has_many :feeds, through: :user_feeds
+  has_many :feed_items, through: :feeds
+  has_many :feed_item_reads
+  has_many :feed_item_stars
 
   after_create :add_default_group
+
+  def read_item_ids
+    feed_item_reads.pluck(:feed_item_id)
+  end
+
+  def unread_item_ids
+    if feed_item_reads.empty?
+      feed_items.pluck(:id)
+    else
+      feed_items.where("feed_items.id NOT IN (?)", read_item_ids).pluck(:id)
+    end
+  end
+
+  def saved_item_ids
+    feed_item_reads.map(&:feed_item_id)
+  end
 
   private
 

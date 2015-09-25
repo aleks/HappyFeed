@@ -1,24 +1,29 @@
 class FeedItem < ActiveRecord::Base
   belongs_to :feed
+  has_many :feed_item_reads
+  has_many :feed_item_stars
 
   validates :feed_id, :title, :url, presence: true
 
-  scope :unread, -> { where(is_read: nil) }
-  scope :read, -> { where(is_read: true) }
+  # scope :unread, -> { where(is_read: nil) }
+  # scope :read, -> { where(is_read: true) }
 
-  def mark_as(mark)
+  def mark_as(mark, user_id)
     case mark
       when 'read'
-        update_attribute(:is_read, true)
+        unless feed_item_reads.find_by(feed_item_id: id, user_id: user_id)
+          feed_item_reads.create(feed_id: feed_id, user_id: user_id)
+        end
       when 'unread'
-        update_attribute(:is_read, nil)
+        feed_item_reads.find_by(feed_item_id: id, user_id: user_id).try(:destroy)
       when 'saved'
-        update_attribute(:is_saved, true)
+        unless feed_item_stars.find_by(feed_item_id: id, user_id: user_id)
+          feed_item_stars.create(feed_id: feed_id, user_id: user_id)
+        end
       when 'unsaved'
-        update_attribute(:is_saved, nil)
+        feed_item_stars.find_by(feed_item_id: id, user_id: user_id).try(:destroy)
     end
   end
-
 
   def next_item
     FeedItem.where('id > ? AND feed_id = ?', self.id, self.feed_id).limit(1).first

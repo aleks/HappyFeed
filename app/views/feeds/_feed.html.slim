@@ -4,9 +4,9 @@
   h1 = link_to feed.title, feed_path(feed)
   p
     | In: 
-    span.tag = feed.group.title
+    /span.tag = feed.group.title
     | Unread: 
-    span.tag = feed.feed_items.unread.count
+    /span.tag = feed.feed_items.unread.count
 
   /ul
   /  - if feed_items = feed.feed_items

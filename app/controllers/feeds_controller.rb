@@ -4,7 +4,7 @@ class FeedsController < ApplicationController
 
   def index
     @feeds = current_user.feeds.order(:title)
-    @feed = Feed.new(group_id: current_user.groups.find_by(default: true).id)
+    @feed = Feed.new
   end
 
   def show
@@ -21,10 +21,12 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = current_user.feeds.new(feed_params)
+    feed = Feed.find_or_create_by(feed_params)
+    user_feed = current_user.user_feeds.create(feed_id: feed.id)
 
-    if @feed.save
-      FeedFetcher.new(@feed.id).fetch
+    if user_feed.save
+      # TODO: If feed is new, let's crawl it?
+      # FeedFetcher.new(@feed.id).fetch
       redirect_to feeds_path, notice: 'Feed added!'
     else
       redirect_to feeds_path, alert: "Could not subscribe to Feed! Wrong URL?"
@@ -45,6 +47,6 @@ class FeedsController < ApplicationController
     end
 
     def feed_params
-      params.require(:feed).permit(:feed_url, :group_id)
+      params.require(:feed).permit(:feed_url)
     end
 end
