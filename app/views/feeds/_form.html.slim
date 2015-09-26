@@ -1,4 +1,3 @@
 = simple_form_for @feed do |f|
   = f.input :feed_url, placeholder: 'http://example.com/feed.rss'
-  /= f.input :group_id, as: :select, collection: Group.where(user_id: current_user.id).map {|g| [g.title, g.id]}, required: true
   = f.button :submit

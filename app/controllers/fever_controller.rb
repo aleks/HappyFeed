@@ -8,10 +8,7 @@ class FeverController < ApplicationController
   def fever
     auth = { api_version: 2, auth: 1, last_refreshed_on_time: Time.now.to_i }
     results = get_api_endpoint(params)
-
     api_response = auth.merge!(results)
-
-puts api_response
 
     render json: api_response.to_json
   end
@@ -95,11 +92,11 @@ puts api_response
 
     def items
       if params[:since_id]
-        feed_items = FeedItem.joins(:feed).where(feeds: {user_id: @api_user.id}).where('feed_items.id > ?', params[:since_id])
+        feed_items = @api_user.feed_items.where('feed_items.id > ?', params[:since_id])
       elsif params[:with_ids]
-        feed_items = FeedItem.joins(:feed).where(feeds: {user_id: @api_user.id}).where('feed_items.id IN (?)', params[:with_ids].split(','))
+        feed_items = @api_user.feed_items.where('feed_items.id IN (?)', params[:with_ids].split(','))
       else
-        feed_items = FeedItem.joins(:feed).where(feeds: {user_id: @api_user.id})
+        feed_items = @api_user.feed_items
       end
 
       items = []
@@ -111,8 +108,8 @@ puts api_response
           author: item.author,
           html: item.html,
           url: item.url,
-          is_saved: item.is_saved,
-          is_read: item.is_read,
+          is_saved: (@api_user.item_starred?(item.id) ? 1 : 0),
+          is_read: (@api_user.item_read?(item.id) ? 1 : 0),
           created_on_time: item.created_on_time.to_i
         }
       end
@@ -142,26 +139,28 @@ puts api_response
 
     def mark_feed(params)
       if params[:as] == "read"
-        FeedItem.joins(:feed).where(
-          feeds: { id: params[:id], user_id: @api_user.id},
-          feed_items: { is_read: nil }
-        ).where('created_on_time <= ?', Time.at(params[:before].to_i))
-        .update_all(is_read: true)
+        feed          = @api_user.feeds.find(params[:id])
+        feed_item_ids = feed.feed_items.where('created_on_time <= ?', Time.at(params[:before].to_i)).pluck(:id)
+
+        feed_item_ids.each do |feed_item_id|
+          FeedItemRead.create(user_id: @api_user.id, feed_id: feed.id, feed_item_id: feed_item_id)
+        end
       end
     end
 
     def mark_group(params)
       if params[:as] == "read"
-        FeedItem.joins(:feed).where(
-          feeds: { group_id: params[:id], user_id: @api_user.id},
-          feed_items: { is_read: nil }
-        ).where('created_on_time <= ?', Time.at(params[:before].to_i))
-        .update_all(is_read: true)
+        group = @api_user.groups.find(params[:id])
+        feed_items = group.feed_items.where('created_on_time <= ?', Time.at(params[:before].to_i))
+
+        feed_items.each do |feed_item|
+          FeedItemRead.create(user_id: @api_user.id, feed_id: feed_item.feed_id, feed_item_id: feed_item.id)
+        end
       end
     end
 
     def mark_item(params)
-      FeedItem.find(params[:id]).mark_as(params[:as], @api_user.id)
+      @api_user.feed_items.find(params[:id]).mark_as(params[:as], @api_user.id)
     end
 
 end

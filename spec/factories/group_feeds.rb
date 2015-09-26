@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :user_feed do
-    user_id 1
+  factory :group_feed do
+    group_id 1
     feed_id 1
   end
 

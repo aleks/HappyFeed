@@ -13,8 +13,12 @@ class User < ActiveRecord::Base
 
   after_create :add_default_group
 
-  def read_item_ids
-    feed_item_reads.pluck(:feed_item_id)
+  def read_item_ids(feed_id = nil)
+    if feed_id
+      feed_item_reads.where(feed_id: feed_id).pluck(:feed_item_id)
+    else
+      feed_item_reads.pluck(:feed_item_id)
+    end
   end
 
   def unread_item_ids
@@ -26,7 +30,15 @@ class User < ActiveRecord::Base
   end
 
   def saved_item_ids
-    feed_item_reads.map(&:feed_item_id)
+    feed_item_stars.map(&:feed_item_id)
+  end
+
+  def item_read?(feed_item_id)
+    feed_item_reads.find_by(feed_item_id: feed_item_id).present?
+  end
+
+  def item_starred?(feed_item_id)
+    feed_item_stars.find_by(feed_item_id: feed_item_id).present?
   end
 
   private

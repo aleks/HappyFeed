@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925140540) do
+ActiveRecord::Schema.define(version: 20150925213652) do
 
   create_table "feed_item_reads", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 20150925140540) do
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end
+
+  create_table "group_feeds", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "feed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "group_feeds", ["feed_id"], name: "index_group_feeds_on_feed_id"
+  add_index "group_feeds", ["group_id"], name: "index_group_feeds_on_group_id"
 
   create_table "groups", force: :cascade do |t|
     t.integer  "user_id"
