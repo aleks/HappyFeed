@@ -4,12 +4,11 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validate :validate_email
 
-  has_many :groups
-  has_many :user_feeds
-  has_many :feeds, through: :user_feeds
+  has_and_belongs_to_many :feeds
   has_many :feed_items, through: :feeds
   has_many :feed_item_reads
   has_many :feed_item_stars
+  has_many :groups
 
   after_create :add_default_group
 
@@ -41,7 +40,25 @@ class User < ActiveRecord::Base
     feed_item_stars.find_by(feed_item_id: feed_item_id).present?
   end
 
+  def subscribe(feed)
+    if feeds << feed
+      groups.find_by(default: true).feeds << feed
+    end
+  end
+
+  def unsubscribe(feed)
+    if feeds.delete(feed)
+      remove_feed_from_groups(feed)
+    end
+  end
+
   private
+
+    def remove_feed_from_groups(feed)
+      groups.each do |group|
+        group.feeds.destroy(feed)
+      end
+    end
 
     def add_default_group
       Group.create(user_id: id, title: 'Default Group', default: true)

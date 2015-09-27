@@ -1,16 +1,15 @@
 class Feed < ActiveRecord::Base
-  has_many :user_feeds
-  has_many :users, through: :user_feeds
+  has_and_belongs_to_many :users
   has_many :feed_items, dependent: :destroy
-  has_many :feed_items_reads, dependent: :destroy
-  has_many :group_feeds
-  has_many :groups, through: :group_feeds
+  has_many :feed_item_reads, dependent: :destroy
+  has_and_belongs_to_many :groups
 
   validates :feed_url, presence: true
   validates :feed_url, uniqueness: true
   validate :feed_url_is_reachable
 
   # before_save :discover_feed_url
+  after_create :fetch_feed
 
   def unread_items(user_id)
     reads = User.find(user_id).read_item_ids(id)
@@ -22,6 +21,10 @@ class Feed < ActiveRecord::Base
   end
 
   private
+
+    def fetch_feed
+      FeedFetcher.new(id).fetch
+    end
 
     def feed_url_is_reachable
       err = 'Feed URL unreachable or error!'

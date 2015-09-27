@@ -58,15 +58,25 @@ ActiveRecord::Schema.define(version: 20150925213652) do
     t.datetime "updated_at",                           null: false
   end
 
-  create_table "group_feeds", force: :cascade do |t|
+  create_table "feeds_groups", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "feed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "group_feeds", ["feed_id"], name: "index_group_feeds_on_feed_id"
-  add_index "group_feeds", ["group_id"], name: "index_group_feeds_on_group_id"
+  add_index "feeds_groups", ["feed_id"], name: "index_feeds_groups_on_feed_id"
+  add_index "feeds_groups", ["group_id"], name: "index_feeds_groups_on_group_id"
+
+  create_table "feeds_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "feeds_users", ["feed_id"], name: "index_feeds_users_on_feed_id"
+  add_index "feeds_users", ["user_id"], name: "index_feeds_users_on_user_id"
 
   create_table "groups", force: :cascade do |t|
     t.integer  "user_id"
@@ -75,16 +85,6 @@ ActiveRecord::Schema.define(version: 20150925213652) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "user_feeds", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "feed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "user_feeds", ["feed_id"], name: "index_user_feeds_on_feed_id"
-  add_index "user_feeds", ["user_id"], name: "index_user_feeds_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

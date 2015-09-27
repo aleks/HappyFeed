@@ -1,17 +1,16 @@
 class Group < ActiveRecord::Base
   belongs_to :user
-  has_many :group_feeds, dependent: :destroy
-  has_many :feeds, through: :group_feeds
+  has_and_belongs_to_many :feeds
   has_many :feed_items, through: :feeds
 
   before_destroy :add_feeds_to_default_group
 
-  def add_feed(feed_id)
-    group_feeds.create(feed_id: feed_id)
+  def add_feed(feed)
+    feeds << feed
   end
 
-  def remove_feed(feed_id)
-    group_feeds.find_by(feed_id: feed_id).destroy
+  def remove_feed(feed)
+    feeds.delete(feed)
   end
 
   def add_feeds_to_default_group
