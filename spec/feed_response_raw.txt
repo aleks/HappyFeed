@@ -1,0 +1,481 @@
+HTTP/1.1 200 OK
+Content-Type: application/atom+xml; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Status: 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Date: Thu, 08 Oct 2015 09:31:17 GMT
+X-XSS-Protection: 1; mode=block
+X-Request-Id: c1261d02-782a-43f6-83a3-a196ba4028b3
+ETag: "7c01b5fe615e92c2eed7146bad7f9e39"
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.053323
+X-Content-Type-Options: nosniff
+X-Rack-Cache: miss
+Set-Cookie: request_method=GET; path=/
+X-Powered-By: Phusion Passenger 5.0.9
+Server: nginx/1.8.0 + Phusion Passenger 5.0.9
+
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="de" xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:need.computer,2005:/posts</id>
+  <link rel="alternate" type="text/html" href="http://need.computer"/>
+  <link rel="self" type="application/atom+xml" href="http://need.computer/posts.atom"/>
+  <title>Aleks</title>
+  <updated>2015-09-30T08:39:47Z</updated>
+  <entry>
+    <id>tag:need.computer,2005:pqf799</id>
+    <published>2015-09-30T10:39:33+02:00</published>
+    <updated>2015-09-30T10:39:47+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/pqf799"/>
+    <url>http://need.computer/pqf799</url>
+    <title>Tesla’s Model X Has A Bio Weapon Defense Mode Button (Seriously)
+
+Die wissen halt, wie man Autos an Nerds verkauft. :)</title>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;Biodefense mode, accessible as a button on the in dash display, pumps up the Model X’s HEPA air filter to maximum level, which Musk claims would be able to get rid of toxins from biological weapons. TechCrunch’s Greg Kumparak, who is at the Model X unveiling, reports that Musk said Tesla had trouble getting any available air testing sensors to even detect a measurable level of particles and made some jokes alluding to the Volkswagen emissions scandal.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://techcrunch.com/2015/09/29/teslas-model-x-has-a-bio-weapon-defense-mode-button-seriously/"&gt;Tesla’s Model X Has A Bio Weapon Defense Mode Button (Seriously)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Die wissen halt, wie man Autos an Nerds verkauft. :)&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:unz003</id>
+    <published>2015-09-27T21:30:05+02:00</published>
+    <updated>2015-09-27T21:30:05+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/unz003"/>
+    <url>http://need.computer/unz003</url>
+    <title>Sehr toller Talk, unbedingt mal ansehen! #youtube #software</title>
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;div class="embedded video youtube"&gt;&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/zs0E4E83_X8?feature=oembed" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;Sehr toller Talk, unbedingt mal ansehen! &lt;a href="http://need.computer/tag/youtube" class="hashtag p-category"&gt;#youtube&lt;/a&gt; &lt;a href="http://need.computer/tag/software" class="hashtag p-category"&gt;#software&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:rvk689</id>
+    <published>2015-09-26T02:00:57+02:00</published>
+    <updated>2015-09-26T02:01:20+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/rvk689"/>
+    <url>http://need.computer/rvk689</url>
+    <title>Scheinbar gibt es in den USA eine 20th Anniversary Edition von Hackers.</title>
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;div class="embedded video youtube"&gt;&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/iVxNNVzgMyA?feature=oembed" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;Scheinbar gibt es in den USA eine 20th Anniversary Edition von &lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Hackers_%28film%29"&gt;Hackers&lt;/a&gt;&lt;/em&gt;. Wollen wir mal hoffen, dass diese auch bald in Deutschland erhältlich ist!&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:tyg193</id>
+    <published>2015-09-25T14:59:42+02:00</published>
+    <updated>2015-09-25T14:59:42+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/tyg193"/>
+    <url>http://need.computer/tyg193</url>
+    <title>Ist viel dran!</title>
+    <content type="html">&lt;p&gt;&lt;em&gt;This post is in reference to &lt;a href="http://pants.morgvom.org/ccq775"&gt;pants.morgvom.org/ccq775&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&lt;blockquote&gt;
+  &lt;p&gt;&lt;/p&gt;
+&lt;div class="embedded rich twitter"&gt;
+&lt;blockquote class="twitter-tweet"&gt;
+&lt;p&gt;Then
+Users: Please DoNotTrack me
+AdTech+Publishers: Screw you
+
+Now 
+AdTech+Publishers: Please DoNotAdBlock me 
+Users: Screw you&lt;/p&gt;— Kontra (@counternotions) &lt;a href="https://twitter.com/counternotions/status/645598372166893568"&gt;September 20, 2015&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+
+  &lt;p&gt;via &lt;a href="http://daringfireball.net/linked/2015/09/21/kontra-ad-block"&gt;Daring Fireball&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ist viel dran! Persönlich habe ich absolut kein Mitleid mit der Werbeindustrie. Selbstverständlich, tun mir die Publisher leid, die Ihre Einnahmen davon rennen sehen. Aber wenn die Werbeindustrie nicht immer so miese Touren fahren würde (hauptsache alles blinkt und bewegt sich), wären Leute auch wohl deutlich weniger allergisch auf Online-Werbung.&lt;/p&gt;
+
+&lt;p&gt;Werbung zu sehen ist für mich absolut kein Problem. Sie sollen es halt nur anständig implementieren. :)&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:smr355</id>
+    <published>2015-09-19T02:11:24+02:00</published>
+    <updated>2015-09-19T02:11:24+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/smr355"/>
+    <url>http://need.computer/smr355</url>
+    <title>Ich glaube, ich muss mir bald wieder einen Gaming PC zulegen.</title>
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;div class="embedded video youtube"&gt;&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/ytviLdEIuSQ?feature=oembed" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;Ich glaube, ich muss mir bald wieder einen Gaming PC zulegen.&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:nzn929</id>
+    <published>2015-09-17T17:55:18+02:00</published>
+    <updated>2015-09-17T17:55:18+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/nzn929"/>
+    <url>http://need.computer/nzn929</url>
+    <title>I created a fake business and bought it an amazing online reputation</title>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;What you probably didn’t realize was that there is no such thing as the Freakin’ Awesome Karaoke Express (or F.A.K.E., for short). I made it up and paid strangers to pump up its online footprint to make it seem real. I didn’t do it to scam anyone or even for the LULZ. I wanted to see firsthand how the fake reputation economy operates. The investigation led me to an online marketplace where a good reputation comes cheap.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://fusion.net/story/191773/i-created-a-fake-business-and-fooled-thousands-of-people-into-thinking-it-was-real/"&gt;I created a fake business and bought it an amazing online reputation&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:rrn663</id>
+    <published>2015-09-17T00:29:18+02:00</published>
+    <updated>2015-09-17T00:29:18+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/rrn663"/>
+    <url>http://need.computer/rrn663</url>
+    <title>hahahaha, schade, dass das eine Werbung ist.</title>
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;div class="embedded video youtube"&gt;&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/NtlUNhbODCQ?feature=oembed&amp;amp;start=60" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;hahahaha, schade, dass das eine Werbung ist. Aber wirklich lustig.&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:apc663</id>
+    <published>2015-09-15T10:19:01+02:00</published>
+    <updated>2015-09-15T16:29:32+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/apc663"/>
+    <url>http://need.computer/apc663</url>
+    <title/>
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;div class="embedded rich twitter"&gt;
+&lt;blockquote class="twitter-tweet"&gt;
+&lt;p&gt;Wir haben mal geschätzt, was Apple an Steuern zahlen müsste - wenn Europas Politik Ernst machen würde: &lt;a href="http://t.co/vNDmrXka91"&gt;http://t.co/vNDmrXka91&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/ddj?src=hash"&gt;#ddj&lt;/a&gt;&lt;/p&gt;— Philip Faigle (@pfaigle) &lt;a href="https://twitter.com/pfaigle/status/643692425370841088"&gt;September 15, 2015&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:sro364</id>
+    <published>2015-09-14T11:55:36+02:00</published>
+    <updated>2015-09-14T11:55:45+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/sro364"/>
+    <url>http://need.computer/sro364</url>
+    <title>Extrem cooles Gem um HTTP Calls zu debuggen:
+
+
+
+htty bei GitHub
+
+#ruby #software</title>
+    <content type="html">&lt;p&gt;Extrem cooles Gem um HTTP Calls zu debuggen:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;htty is the HTTP TTY, a console application for interacting with web servers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/htty/htty"&gt;htty bei GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://need.computer/tag/ruby" class="hashtag p-category"&gt;#ruby&lt;/a&gt; &lt;a href="http://need.computer/tag/software" class="hashtag p-category"&gt;#software&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:uns053</id>
+    <published>2015-09-13T21:05:12+02:00</published>
+    <updated>2015-09-13T21:05:12+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/uns053"/>
+    <url>http://need.computer/uns053</url>
+    <title>Ich hör sonst lieber Metal, aber solche Raps find ich super!</title>
+    <content type="html">&lt;p&gt;&lt;em&gt;This post is in reference to &lt;a href="http://pants.morgvom.org/mcg937"&gt;pants.morgvom.org/mcg937&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&lt;blockquote&gt;
+  &lt;h1 id="was-sind-eigentlich-16-bars"&gt;Was sind eigentlich 16 Bars?&lt;/h1&gt;
+
+  &lt;p&gt;&lt;/p&gt;
+&lt;div class="embedded video vimeo"&gt;&lt;iframe src="https://player.vimeo.com/video/139122508" width="1280" height="720" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ich hör sonst lieber Metal, aber solche Raps find ich super! Freu mich auf mehr! \o/&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:mpj879</id>
+    <published>2015-09-13T21:00:50+02:00</published>
+    <updated>2015-09-13T21:00:50+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/mpj879"/>
+    <url>http://need.computer/mpj879</url>
+    <title>Schön zu hören! :)</title>
+    <content type="html">&lt;p&gt;&lt;em&gt;This post is in reference to &lt;a href="http://pants.morgvom.org/xsz114"&gt;pants.morgvom.org/xsz114&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&lt;blockquote&gt;
+  &lt;p&gt;tl;dr: Toll! Will ich mal ausprobieren!&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;h1 id="happyfeed"&gt;HappyFeed&lt;/h1&gt;
+
+    &lt;p&gt;tl;dr: Ich habe einen RSS Server geschrieben, der mit vielen Apps kompatibel ist.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Schön zu hören! :)&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:jox666</id>
+    <published>2015-09-13T21:00:14+02:00</published>
+    <updated>2015-09-13T21:00:14+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/jox666"/>
+    <url>http://need.computer/jox666</url>
+    <title>+fav! :D</title>
+    <content type="html">&lt;p&gt;&lt;em&gt;This post is in reference to &lt;a href="http://pants.f5n.de/fuz671"&gt;pants.f5n.de/fuz671&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;(_axx) Man sagt ja immer, man soll sich mit seinen Blumen unterhalten, damit sie besser wachsen&lt;br&gt;
+(_axx) Ich unterhalt mich immer mit meinem Kaffee, damit er besser schmeckt.&lt;br&gt;
+(_axx) Ich liebe meinen Kaffee&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;p&gt;&lt;a href="http://need.computer/tag/qotd" class="hashtag p-category"&gt;#qotd&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;+fav! :D&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:ttj046</id>
+    <published>2015-09-13T20:59:21+02:00</published>
+    <updated>2015-09-13T21:05:43+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/ttj046"/>
+    <url>http://need.computer/ttj046</url>
+    <title>HappyFeed - FeedItem View und 2-Spalten Layout</title>
+    <content type="html">&lt;h1 id="happyfeed---feeditem-view-und-2-spalten-layout"&gt;HappyFeed - FeedItem View und 2-Spalten Layout&lt;/h1&gt;
+
+&lt;p&gt;Nachdem ich &lt;a href="http://need.computer/adi751"&gt;gestern&lt;/a&gt; angekündigt hatte, dass ich zur Zeit an HappyFeed arbeite, habe ich heute mal die Zeit genutzt und das Layout etwas überarbeitet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.klaut.org/jpzeq20150913_2051x64e7.png" alt="HappyFeed"&gt;&lt;/p&gt;
+
+&lt;p&gt;Das Layout ist nun in eine Sidebar und einen Content Bereich aufgeteilt. In der Sidebar sollen später (siehe grober Entwurf im Screenshot) die Feeds nach Gruppen angezeigt werden.&lt;/p&gt;
+
+&lt;p&gt;Außerdem kann man mit Previous und Next links durch die Artikel eines Feeds blättern. Hier ist später auch eine Steuerung per Keyboard Shortcuts (Arrow left/right, bzw. h/l).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.klaut.org/umxuv20150913_2057c0cv2.png" alt="HappyFeed"&gt;&lt;/p&gt;
+
+&lt;p&gt;Aktuell werden gelesene Feed Items noch nicht als gelesen markiert und zeigen auch noch keinen Status dazu an. Ich werde es wohl ähnlich zu Desktop Feed Readern handhaben und nach 2-3 Sekunden erst das Feed Item als gelesen markieren.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://need.computer/tag/software" class="hashtag p-category"&gt;#software&lt;/a&gt; &lt;a href="http://need.computer/tag/opensource" class="hashtag p-category"&gt;#opensource&lt;/a&gt; &lt;a href="http://need.computer/tag/happyfeed" class="hashtag p-category"&gt;#happyfeed&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:adi751</id>
+    <published>2015-09-13T01:35:32+02:00</published>
+    <updated>2015-09-13T20:59:36+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/adi751"/>
+    <url>http://need.computer/adi751</url>
+    <title>HappyFeed</title>
+    <content type="html">&lt;h1 id="happyfeed"&gt;HappyFeed&lt;/h1&gt;
+
+&lt;p&gt;tl;dr: Ich habe einen RSS Server geschrieben, der mit vielen Apps kompatibel ist.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.klaut.org/g352c20150913_0136keadj.png" alt="HappyFeed"&gt;&lt;/p&gt;
+
+&lt;p&gt;Weil ich kein großer Fan von Feedly und anderen RSS Hostern bin, habe ich vor einiger Zeit angefangen meinen eigenen kleinen RSS Server in Ruby on Rails zu schreiben.&lt;/p&gt;
+
+&lt;p&gt;HappyFeed ist ein kleiner RSS Server der mit der Fever RSS API kompatibel ist. Das bedeutet, dass alle RSS Reader Apps, die Fever RSS unterstützen, auch mit HappyFeed kompatibel sind. Zum Beispiel wären da &lt;a href="http://reederapp.com/"&gt;Reeder&lt;/a&gt; (für iOS und Mac), &lt;a href="http://supertop.co/unread/"&gt;Unread&lt;/a&gt;, &lt;a href="http://readkitapp.com/"&gt;ReadKit&lt;/a&gt; und einige andere.&lt;/p&gt;
+
+&lt;p&gt;Aktuell funktioniert die API komplett und lässt sich ohne weiteres mit den besagten Apps nutzen. Ich habe heute noch ein Feed Item Listing integriert, so dass man bei seinen Subscriptions auch per Webinterface sehen kann, welche Beiträge dort hinterlegt sind.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.klaut.org/tioji20150913_0136lq30b.png" alt="HappyFeed FeedItem Listing"&gt;&lt;/p&gt;
+
+&lt;p&gt;Im Listing werden schon mal Favoriten (die per App gesetzt werden können) markiert und gelesene/ungelesene Beiträge optisch voneinander getrennt.&lt;/p&gt;
+
+&lt;p&gt;Geplant ist außerdem noch eine Lese Funktion direkt im Webinterface. Denn obwohl ich die meiste Zeit mit den Apps lese, habe ich immer mal wieder den Fall, dass ich gerne meinen Browser verwenden möchte.&lt;/p&gt;
+
+&lt;h3 id="to-do"&gt;to-do&lt;/h3&gt;
+
+&lt;p&gt;Zum aktuellen Zeitpunkt besteht HappyFeed nur aus der API, einem Subscription Manager, der Feeds abonnieren kann und diese in Gruppen einsortiert. Ich habe aber noch einige Funktionen im Kopf, die ich jetzt Stück für Stück integrieren werde.&lt;/p&gt;
+
+&lt;p&gt;Ich habe noch einige Ideen, wie man den eigentlichen Feed Content mit zusätzlichen Informationen aufwerten könnte. Außerdem möchte ich gerne ein Feature integrieren, dass eine pro-Feed Option beinhaltet, mit der ich Feeds nach X Tagen automatisch als gelesen markieren kann (bzw. Items die älter sind als X). Denn ich habe einige RSS Feeds die extrem viel Inhalt liefern, aber von mir nur &lt;em&gt;sporadisch&lt;/em&gt; gelesen werden, wenn alles andere &lt;em&gt;aufgelesen&lt;/em&gt; wurde. Das hilft bei der Ordnung! :)&lt;/p&gt;
+
+&lt;p&gt;Abgesehen davon, möchte ich noch “intelligente Gruppen/Filter” integrieren. Die Idee dahinter ist, dass man bestimmte Keywords definieren kann, nach denen in RSS Feeds gesucht wird. Alle Beiträge die diese Kriterien erfüllen, landen dann in einer solchen Liste.&lt;/p&gt;
+
+&lt;p&gt;Ich bin mir zur Zeit noch nicht sicher, ob ich selber (entgegen meiner eigenen Ansprüche) einen RSS Hostingdienst anbiete oder nicht, aber es wird sich zeigen wie weit das Projekt wächst und ob der Bedarf da wäre. Denn ich würde schon auf ein faires Bezahlmodell setzen, um die Kosten zu decken. Hättet ihr also Bedarf an einem solchen Dienst (der nicht durch VC oder Ads finanziert wird), lasst es mich wissen!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://i.klaut.org/220or20150913_01353ixbr.png" alt="HappyFeed Reeder App"&gt;&lt;/p&gt;
+
+&lt;p&gt;Wer sich ein bisschen mit Rails auskennt, kann sich den &lt;a href="https://github.com/aleks/HappyFeed"&gt;Code bei GitHub&lt;/a&gt; ansehen. Auch wenn ich kein Hokus Pokus veranstalte, gibt es zur Zeit noch keinen Docker Container oder andere Hilfestellungen, um HappyFeed &lt;em&gt;in production&lt;/em&gt; laufen zu lassen.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://need.computer/tag/software" class="hashtag p-category"&gt;#software&lt;/a&gt; &lt;a href="http://need.computer/tag/opensource" class="hashtag p-category"&gt;#opensource&lt;/a&gt; &lt;a href="http://need.computer/tag/happyfeed" class="hashtag p-category"&gt;#happyfeed&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:jno733</id>
+    <published>2015-09-09T14:44:36+02:00</published>
+    <updated>2015-09-09T14:44:36+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/jno733"/>
+    <url>http://need.computer/jno733</url>
+    <title>Sehr cooles Projekt! 123D Circuits</title>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Electronics from beginner to pro&lt;/strong&gt;&lt;br&gt;
+123D Circuits empowers you to bring your ideas to life with free, easy to use online tools.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sehr cooles Projekt! &lt;a href="https://123d.circuits.io/"&gt;123D Circuits&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:xrx812</id>
+    <published>2015-09-07T12:52:19+02:00</published>
+    <updated>2015-09-07T12:52:19+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/xrx812"/>
+    <url>http://need.computer/xrx812</url>
+    <title>Itsycal for Mac
+
+#software</title>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;Itsycal is a tiny calendar for your Mac’s menu bar.&lt;/p&gt;
+
+  &lt;p&gt;If you want, it will display your calendar events as a companion to the Mac Calendar app. You can also create and delete (but not edit) events. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://www.mowglii.com/itsycal/"&gt;Itsycal for Mac&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://need.computer/tag/software" class="hashtag p-category"&gt;#software&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:mlv527</id>
+    <published>2015-09-04T15:29:40+02:00</published>
+    <updated>2015-09-04T15:29:40+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/mlv527"/>
+    <url>http://need.computer/mlv527</url>
+    <title>Don’t Build a Billion-Dollar Business.</title>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;Silicon Valley prays at the altar of the billion-dollar business. And for good reason: These companies define industries, give the founders so-called “F-you money,” and provide VCs with a return that can counterbalance a dozen lousy investments. I don’t take issue with any of this.&lt;/p&gt;
+
+  &lt;p&gt;What I do take issue with is the fact that Silicon Valley derides almost any other kind of business. So, million-dollar businesses are referred to as “lifestyle” companies and even sizeable exits are called “acquihires.”&lt;/p&gt;
+
+  &lt;p&gt;Here’s the reality: Almost none of the start-ups currently working away in Silicon Valley will become billion-dollar businesses. And the dirty secret? Most of the founders know this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="https://www.backblaze.com/blog/dont-build-a-billion-dollar-business-really/"&gt;Don’t Build a Billion-Dollar Business. Really.&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:wwt409</id>
+    <published>2015-09-02T16:50:43+02:00</published>
+    <updated>2015-09-25T23:07:35+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/wwt409"/>
+    <url>http://need.computer/wwt409</url>
+    <title>SHUT UP AND TAKE MY MONEY</title>
+    <content type="html">&lt;p&gt;&lt;/p&gt;&lt;div class="embedded video youtube"&gt;&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/TCc9LFaRIh8?feature=oembed" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;div class="embedded video youtube"&gt;&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/H7lq0P1CNk8?feature=oembed" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;SHUT UP AND TAKE MY MONEY&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:jlr852</id>
+    <published>2015-09-02T14:25:58+02:00</published>
+    <updated>2015-09-02T14:25:58+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/jlr852"/>
+    <url>http://need.computer/jlr852</url>
+    <title>Stumbling on the escalator
+
+#programming</title>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;So next time someone praises flexible development and design practices and you have the knee-jerk reaction to either condemn them for not using the newest and coolest as “everybody has a xyz phone and browser abc” or you just don’t see the point in starting from HTML and getting to your goal re-using what you structured and explained in HTML as “GMail and Facebook don’t do it either” think about the escalator and how handy it is in the real world.&lt;/p&gt;
+
+  &lt;p&gt;Think about it when you are tired (accessibility), or you carry a lot of luggage (performance) or when you just want to have a quick chat whilst being transported up without getting out of breath. Your own body has different needs at different times. Progressively enhancing our products allows us to cater for lots of different needs and environments. Specialising and optimising for one will have a much more impressive result, but for example a lift is pointless when it doesn’t work – no matter how shiny and impressive it looks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://christianheilmann.com/2012/02/16/stumbling-on-the-escalator/"&gt;Stumbling on the escalator&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://need.computer/tag/programming" class="hashtag p-category"&gt;#programming&lt;/a&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:need.computer,2005:aty740</id>
+    <published>2015-09-01T15:49:43+02:00</published>
+    <updated>2015-09-01T15:50:07+02:00</updated>
+    <link rel="alternate" type="text/html" href="http://need.computer/aty740"/>
+    <url>http://need.computer/aty740</url>
+    <title/>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;We’re in an era of the cult of the entrepreneur. We analyze the Tory Burches and Evan Spiegels of the world looking for a magic formula or set of personality traits that lead to success. Entrepreneurship is on the rise, and more students coming out of business schools are choosing startup life over Wall Street.&lt;/p&gt;
+
+  &lt;p&gt;But what often gets lost in these conversations is that the most common shared trait among entrepreneurs is access to financial capital—family money, an inheritance, or a pedigree and connections that allow for access to financial stability. &lt;strong&gt;While it seems that entrepreneurs tend to have an admirable penchant for risk, it’s usually that access to money which allows them to take risks.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Source: &lt;a href="http://qz.com/455109/entrepreneurs-dont-have-a-special-gene-for-risk-they-come-from-families-with-money/"&gt;Entrepreneurs don’t have a special gene for risk—they come from families with money&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src="https://media.giphy.com/media/TEAa6rnazO8y4/giphy.gif" alt="duh"&gt;&lt;/p&gt;
+</content>
+    <author>
+      <name>Aleks</name>
+      <uri>http://need.computer/</uri>
+    </author>
+  </entry>
+</feed>
