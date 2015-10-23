@@ -50,8 +50,9 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
+end
 
-  # Specs etc
+group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
@@ -60,4 +61,3 @@ group :development, :test do
   gem 'capybara', require: false
   gem 'webmock'
 end
-
