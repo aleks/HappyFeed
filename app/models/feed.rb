@@ -12,6 +12,9 @@ class Feed < ActiveRecord::Base
   # before_save :discover_feed_url
   after_create :fetch_feed
 
+  # we need the group_id for our modal subscription dialog
+  attr_accessor :group_id
+
   def unread_items(user_id)
     reads = User.find(user_id).read_item_ids(id)
     if reads.empty?
@@ -19,6 +22,10 @@ class Feed < ActiveRecord::Base
     else
       feed_items.where("feed_items.id NOT IN (?)", reads)
     end
+  end
+
+  def self.discover_feed_from_url(url)
+    Feedbag.find(url)
   end
 
   private
@@ -38,10 +45,4 @@ class Feed < ActiveRecord::Base
       end
     end
 
-    # def discover_feed_url
-    #   feeds = Feedbag.find(feed_url)
-    #   feeds.each do |feed_url|
-    #     self.feed_url = feed_url if Feedbag.feed?(feed_url)
-    #   end
-    # end
 end

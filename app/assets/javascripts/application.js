@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require 'feeds'
 
 $(function () {
   $('.notice').fadeOut(5000);

@@ -1,3 +1,9 @@
-= simple_form_for @feed do |f|
-  = f.input :feed_url, placeholder: 'http://example.com/feed.rss'
-  = f.button :submit
+.new_feed
+  = simple_form_for Feed.new do |f|
+    .screen-1
+      = f.input :feed_url, placeholder: 'http://example.com/feed.rss', input_html: { autocomplete: 'off' }
+      .feed-urls style="display: none;"
+      .feed-loading style="display: none;" Loading...
+    .screen-2
+      /= f.input :group_id
+      = f.button :submit

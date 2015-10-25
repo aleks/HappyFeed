@@ -114,3 +114,39 @@
     }
   }
 }
+
+.new_feed {
+  .screen-1 {
+    .feed-urls {
+      margin-top: -12px;
+      padding: 5px;
+      background: #fff;
+      border: 1px solid #ddd;
+
+      .feed-url {
+        font-size: 0.9em;
+        line-height: 30px;
+        padding: 5px;
+        @include clearfix;
+
+        &:hover {
+          background: rgba(150, 150, 150, 0.1);
+        }
+
+        .btn {
+          float: left;
+          display: block;
+          color: #fff;
+          margin-right: 10px;
+          padding: 0px 15px;
+          background: #E54D41;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+
+  .screen-2 {
+    display: none;
+  }
+}
