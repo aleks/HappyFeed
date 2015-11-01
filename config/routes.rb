@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :feeds, except: [:new] do
     get 'page/:page', action: :show, on: :member
     collection do
-      match 'discover', via: [:get, :post]
+      match 'discover', via: :post
+      match 'update_feed_group', via: :post
     end
 
     resources :feed_items, only: [:show], as: :items

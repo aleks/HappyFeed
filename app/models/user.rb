@@ -41,12 +41,16 @@ class User < ActiveRecord::Base
   end
 
   def subscribe(feed, group_id = nil)
-    if feeds << feed
-      if group_id != nil && group_id != ''
-        groups.find(group_id).feeds << feed
-      else
-        groups.find_by(default: true).feeds << feed
+    unless feeds.where(id: feed.id).any?
+      if feeds << feed
+        if group_id != nil && group_id != ''
+          groups.find(group_id).feeds << feed
+        else
+          groups.find_by(default: true).feeds << feed
+        end
       end
+    else
+      true
     end
   end
 

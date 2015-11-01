@@ -1,0 +1,27 @@
+.group_navigation {
+  .group_title {
+    font-weight: bold;
+    padding: 6px 10px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li.group_item, li.group_item_placeholder {
+      a, span {
+        display: block;
+        font-size: 0.9em;
+        padding: 8px 10px;
+        border-bottom: 1px solid #ddd;
+
+        &:hover {
+          background: #f7f7f7;
+        }
+      }
+    }
+  }
+}

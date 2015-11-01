@@ -47,9 +47,24 @@ class FeedsController < ApplicationController
     end
   end
 
+  def update_feed_group
+    feed = current_user.feeds.find(feed_group_params[:feed_id])
+    group = current_user.groups.find(feed_group_params[:group_id])
+
+    if feed && group
+      if current_user.unsubscribe(feed)
+        current_user.subscribe(Feed.find(feed_group_params[:feed_id].to_i), group.id)
+      end
+    end
+  end
+
   private
 
     def feed_params
       params.require(:feed).permit(:feed_url, :group_id)
+    end
+
+    def feed_group_params
+      params.require(:feed).permit(:feed_id, :group_id)
     end
 end

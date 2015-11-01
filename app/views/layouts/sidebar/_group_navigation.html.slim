@@ -1,6 +1,26 @@
 .group_navigation
   - current_user.groups.each do |group|
     .group_title = group.title
-    ul
-      - group.feeds.each do |feed|
-        li.group_item = link_to feed.title, feed
+    - if group.feeds.any?
+      ul id="group_#{group.id}" data-group-id="#{group.id}"
+        - group.feeds.each do |feed|
+          li.group_item data-feed-id="#{feed.id}"
+            = link_to feed.title, feed
+    - else
+      ul id="group_#{group.id}" data-group-id="#{group.id}"
+        li.group_item.group_item_placeholder
+          span No Feeds in this Group.
+
+    javascript:
+      var el = document.getElementById("group_#{group.id}");
+      var sortable = Sortable.create(el, {
+        group: "subscriptions",
+        sort: false,
+        onAdd: function(e){
+          $('#' + e.target.id + ' .group_item_placeholder').fadeOut(100);
+
+          feed_id = $(e.item).data('feed-id');
+          group_id = $(e.target).data('group-id');
+          group.update_feed_group({"feed_id": feed_id, "group_id": group_id});
+        }
+      });

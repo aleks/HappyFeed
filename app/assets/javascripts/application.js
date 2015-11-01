@@ -13,8 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require 'groups'
 //= require 'bind_with_delay'
+//= require 'Sortable'
 //= require 'feeds'
+//= requier_self
 
 $(function () {
   $('.notice').fadeOut(5000);
