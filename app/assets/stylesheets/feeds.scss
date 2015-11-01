@@ -116,6 +116,32 @@
 }
 
 .new_feed {
+  @include clearfix;
+
+  button, input.button {
+    padding: 6px 20px;
+    color: #fff;
+    border-color: #E54D41;
+    background-color: #E54D41;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+      border-color: #E54D41;
+      background-color: #E54D41;
+    }
+
+    &:disabled {
+      color: #ccc;
+      background: #efefef;
+      border: 1px solid #ccc;
+    }
+  }
+
+  input.button {
+    float: right;
+    margin-top: 0;
+  }
+
   .screen-1 {
     .feed-urls {
       margin-top: -12px;
@@ -143,6 +169,10 @@
           border-radius: 3px;
         }
       }
+    }
+
+    button {
+      float: right;
     }
   }
 

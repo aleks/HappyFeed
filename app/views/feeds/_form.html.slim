@@ -4,6 +4,8 @@
       = f.input :feed_url, placeholder: 'http://example.com/feed.rss', input_html: { autocomplete: 'off' }
       .feed-urls style="display: none;"
       .feed-loading style="display: none;" Loading...
+      button disabled="true" class="button to-screen-2" Next
     .screen-2
-      /= f.input :group_id
-      = f.button :submit
+      = f.input :group_id, as: :select, collection: current_user.groups.map {|g| [g.title, g.id]}, prompt: 'Select a Group...'
+      = f.button :submit, class: 'button'
+

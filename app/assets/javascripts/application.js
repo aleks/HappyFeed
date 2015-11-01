@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require 'bind_with_delay'
 //= require 'feeds'
 
 $(function () {

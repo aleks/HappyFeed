@@ -20,4 +20,4 @@
             = link_to feed_item.title, feed_item_path(@feed, feed_item)
           .subline
             .created_on_time = l(feed_item.created_on_time)
-            .word_count = feed_item.html.split(' ').count.to_s + t('.word_count')
+            .word_count = feed_item.html.split(' ').count.to_s + t('.word_count') if feed_item.html

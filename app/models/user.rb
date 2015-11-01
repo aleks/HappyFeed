@@ -40,9 +40,13 @@ class User < ActiveRecord::Base
     feed_item_stars.find_by(feed_item_id: feed_item_id).present?
   end
 
-  def subscribe(feed)
+  def subscribe(feed, group_id = nil)
     if feeds << feed
-      groups.find_by(default: true).feeds << feed
+      if group_id != nil && group_id != ''
+        groups.find(group_id).feeds << feed
+      else
+        groups.find_by(default: true).feeds << feed
+      end
     end
   end
 

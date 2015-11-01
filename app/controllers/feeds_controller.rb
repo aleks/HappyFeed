@@ -12,8 +12,9 @@ class FeedsController < ApplicationController
   end
 
   def create
-    feed = Feed.find_or_create_by(feed_params)
-    if current_user.subscribe(feed)
+    feed = Feed.find_or_create_by(feed_url: feed_params[:feed_url])
+
+    if current_user.subscribe(feed, feed_params[:group_id])
       redirect_to feeds_path, notice: 'Feed added!'
     else
       redirect_to feeds_path, alert: "Could not subscribe to Feed! Wrong URL?"
@@ -30,17 +31,16 @@ class FeedsController < ApplicationController
 
   def discover
     feed_url = feed_params[:feed_url]
-    if feed_url =~ /^((http|https):\/\/)?(([a-z0-9-\.]*)\.)?([a-z0-9-]+)\.([a-z]{2,20})(:[0-9]{1,5})?(\/)?$/ix
-      unless Feedbag.feed?(feed_url)
-        @feed_urls = []
-        feed_urls = Feedbag.find(feed_url)
-        feed_urls.each do |feed_url|
-          @feed_urls << feed_url if Feedbag.feed?(feed_url)
-        end
+
+    if Feedbag.feed?(feed_url)
+      @feed_urls = [feed_url]
+    else
+      @feed_urls = []
+      feed_urls = Feedbag.find(feed_url)
+      feed_urls.each do |feed_url|
+        @feed_urls << feed_url if Feedbag.feed?(feed_url)
       end
     end
-
-    puts @feed_urls
 
     respond_to do |format|
       format.json
