@@ -9,7 +9,6 @@ class Feed < ActiveRecord::Base
   validates :feed_url, uniqueness: true
   validate :feed_url_is_reachable
 
-  # before_save :discover_feed_url
   after_create :fetch_feed
 
   # we need the group_id for our modal subscription dialog
@@ -22,10 +21,6 @@ class Feed < ActiveRecord::Base
     else
       feed_items.where("feed_items.id NOT IN (?)", reads)
     end
-  end
-
-  def self.discover_feed_from_url(url)
-    Feedbag.find(url)
   end
 
   private
