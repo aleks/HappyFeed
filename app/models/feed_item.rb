@@ -29,4 +29,12 @@ class FeedItem < ActiveRecord::Base
   def previous_item
     FeedItem.where('id < ? AND feed_id = ?', self.id, self.feed_id).last
   end
+
+  def word_count
+    html.split(' ').count
+  end
+
+  def length_in_time(wpm = 130)
+    word_count.to_f / wpm.to_f
+  end
 end

@@ -44,7 +44,7 @@ describe FeedItem do
     end
   end
 
-  context "FeedItem methods" do
+  context "FeedItem Pagination" do
     before :each do
       @feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom')
     end
@@ -65,7 +65,20 @@ describe FeedItem do
       expect(feed_items[2].next_item).to eq collected_items[3]
       expect(feed_items[2].previous_item).to eq collected_items[1]
     end
+  end
 
+  context "Word Count and Reading Time" do
+    before :each do
+      @feed_item = FactoryGirl.create(:feed_item)
+    end
+
+    it 'can return the number of words per FeedItem' do
+      expect(@feed_item.word_count).to eq 31
+    end
+
+    it 'can return the number of words per FeedItem' do
+      expect(@feed_item.length_in_time).to eq 0.23846153846153847
+    end
   end
 
 end
