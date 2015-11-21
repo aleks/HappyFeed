@@ -20,12 +20,21 @@ describe Group do
   end
 
   it 'can remove Feeds from a Group' do
-    # Add a Feed first
     @user.groups.first.add_feed(@feed)
     expect(@user.groups.first.feeds.find(@feed.id).present?).to be true
 
     @user.groups.first.remove_feed(@feed)
     expect(@user.groups.first.feeds.exists?(@feed.id)).to be false
+  end
+
+  it 'moves existing subscriptions to the default group if a group gets removed' do
+    random_group = FactoryGirl.create(:group, default: nil)
+    @user.groups.find(random_group.id).add_feed(@feed)
+    expect(@user.groups.find(random_group.id).feeds.find(@feed.id).present?).to be true
+
+    @user.groups.find(random_group.id).destroy
+
+    expect(@user.groups.first.feeds.find(@feed.id).present?).to be true
   end
 
 end
