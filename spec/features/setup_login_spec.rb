@@ -32,9 +32,7 @@ feature 'Setup and Login' do
 
     click_button 'Login'
 
-    # within '.header' do
-      expect(page).to have_content 'user@happyfeed.tld'
-    # end
+    expect(page).to have_content 'user@happyfeed.tld'
   end
 
   scenario 'Login as User' do
@@ -49,9 +47,7 @@ feature 'Setup and Login' do
 
     click_link 'logout'
 
-    # within '.header' do
-      expect(page).not_to have_content 'user@happyfeed.tld'
-    # end
+    expect(page).not_to have_content 'user@happyfeed.tld'
   end
 
 end
