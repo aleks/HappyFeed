@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require 'groups'
 //= require 'bind_with_delay'
 //= require 'Sortable'
+//= require 'jquery-modal'
+//= require 'groups'
 //= require 'feeds'
 //= requier_self
 

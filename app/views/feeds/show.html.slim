@@ -7,6 +7,7 @@
         li = @feed.title
 
     .pagination
+      = link_to 'unsubscribe', feed_path(@feed.id), method: :delete, class: 'button', data: {:confirm => "Unsubscribe #{@feed.title}?"}
       = link_to_previous_page @feed_items, 'Prev', class: 'button'
       = link_to_next_page @feed_items, 'Next', class: 'button'
 

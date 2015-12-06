@@ -6,6 +6,8 @@ class AuthController < ApplicationController
         login_user @user
         redirect_to feeds_path
       end
+    else
+      redirect_to feeds_path
     end
   end
 

@@ -8,11 +8,13 @@ class FeedFetcher
   end
 
   def fetch
-    @fetched = Feedjira::Feed.fetch_and_parse(@feed.feed_url)
+    if @feed.last_updated_on_time.nil? || @feed.last_updated_on_time <= DateTime.now - 1.hour
+      @fetched = Feedjira::Feed.fetch_and_parse(@feed.feed_url)
 
-    unless @fetched == 304 || @fetched == 200 || @fetched == 404
-      update_feed_info!
-      store_feed_items
+      unless @fetched == 304 || @fetched == 200 || @fetched == 404
+        update_feed_info!
+        store_feed_items
+      end
     end
   end
 
@@ -21,6 +23,7 @@ class FeedFetcher
     def update_feed_info!
       @feed.title    = @fetched.title
       @feed.site_url = @fetched.url
+      @feed.last_updated_on_time = DateTime.now
       @feed.save
     end
 
@@ -38,7 +41,7 @@ class FeedFetcher
         author: entry.author,
         html: fetched_content(entry),
         url: entry.url,
-        created_on_time: entry.published.try(:to_datetime) || DateTime.now
+        created_on_time: (entry.published ? entry.published.to_datetime : DateTime.now)
       )
     end
 

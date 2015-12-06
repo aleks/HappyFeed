@@ -2,8 +2,7 @@ class FeedsController < ApplicationController
   before_action :ensure_logged_in!
 
   def index
-    @feeds = current_user.feeds.order(:title)
-    @feed = Feed.new
+    @feeds = current_user.feeds.order('title').page(params[:page])
   end
 
   def show
@@ -11,13 +10,18 @@ class FeedsController < ApplicationController
     @feed_items = @feed.feed_items.page(params[:page])
   end
 
+  def new
+    @feed = Feed.new
+    render layout: false
+  end
+
   def create
     feed = Feed.find_or_create_by(feed_url: feed_params[:feed_url])
 
     if current_user.subscribe(feed, feed_params[:group_id])
-      redirect_to feeds_path, notice: 'Feed added!'
-    else
-      redirect_to feeds_path, alert: "Could not subscribe to Feed! Wrong URL?"
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
@@ -25,7 +29,7 @@ class FeedsController < ApplicationController
     feed = current_user.feeds.find(params[:id])
 
     if current_user.unsubscribe(feed)
-      redirect_to feeds_path
+      redirect_to root_path, turbolinks: true
     end
   end
 

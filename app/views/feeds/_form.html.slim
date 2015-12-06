@@ -1,5 +1,5 @@
 .new_feed
-  = simple_form_for Feed.new do |f|
+  = simple_form_for Feed.new, remote: true do |f|
     .screen-1
       = f.input :feed_url, placeholder: 'http://example.com/feed.rss', input_html: { autocomplete: 'off' }
       .feed-urls style="display: none;"

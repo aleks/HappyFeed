@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'auth#login'
 
-  resources :feeds, except: [:new] do
+  resources :feeds do
     get 'page/:page', action: :show, on: :member
     collection do
       match 'discover', via: :post

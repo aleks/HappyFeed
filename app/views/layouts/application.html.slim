@@ -20,7 +20,7 @@ html
           .auth #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
           .navigation
             ul
-              li = link_to 'Feeds', feeds_path
+              li = link_to 'Feeds', new_feed_path, rel: 'modal:open'
               li = link_to 'Groups', groups_path
 
           = render 'layouts/sidebar/group_navigation'
