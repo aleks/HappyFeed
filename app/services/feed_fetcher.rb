@@ -21,7 +21,7 @@ class FeedFetcher
   private
 
     def update_feed_info!
-      @feed.title    = @fetched.title
+      @feed.title    = @fetched.title || @fetched.url
       @feed.site_url = @fetched.url
       @feed.last_updated_on_time = DateTime.now
       @feed.save
