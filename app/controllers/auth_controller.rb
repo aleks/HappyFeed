@@ -1,13 +1,15 @@
 class AuthController < ApplicationController
 
   def login
-    if request.post? && @user = User.find_by(email: params[:login][:email])
-      if @user.authenticate(params[:login][:password])
-        login_user @user
-        redirect_to feeds_path
-      end
-    else
+    if current_user
       redirect_to feeds_path
+    else
+      if request.post? && @user = User.find_by(email: params[:login][:email])
+        if @user.authenticate(params[:login][:password])
+          login_user @user
+          redirect_to feeds_path
+        end
+      end
     end
   end
 
