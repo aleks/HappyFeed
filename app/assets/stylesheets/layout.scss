@@ -55,6 +55,35 @@ a {
         }
       }
     }
+
+    .navigation {
+      @include clearfix;
+      border-bottom: 1px solid #ddd;
+
+      ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+          float: left;
+          width: 50%;
+          list-style: none;
+
+          &:last-child {
+            border-left: 1px solid #ddd;
+          }
+
+
+          a {
+            text-align: center;
+            display: block;
+            padding: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+          }
+        }
+      }
+    }
   }
 
   .content-wrap {

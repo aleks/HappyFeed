@@ -29,6 +29,11 @@ en:
     attributes:
       feed:
         feed_url: 'Feed URL'
+  layouts:
+    application:
+      sidebar:
+        add_feed: '<i class="ion-plus-round"></i> Add Feed'
+        manage_groups: '<i class="ion-pricetags"></i> Manage Groups'
   feeds:
     show:
       is_saved: 'Fav'

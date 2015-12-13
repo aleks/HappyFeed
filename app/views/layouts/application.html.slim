@@ -1,14 +1,6 @@
 doctype html
 html
-  head
-    title HappyFeed
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
-    meta name="apple-mobile-web-app-capable" content="yes"
-    meta name="apple-mobile-web-app-status-bar-style" content="black"
+  = render 'layouts/head'
 
   body
     .all-wrap
@@ -17,13 +9,14 @@ html
           .logo = image_tag 'logo.png'
 
         - if logged_in?
-          .auth #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
           .navigation
             ul
-              li = link_to 'Feeds', new_feed_path, rel: 'modal:open'
-              li = link_to 'Groups', groups_path
+              li = link_to t('.sidebar.add_feed').html_safe, new_feed_path, rel: 'modal:open'
+              li = link_to t('.sidebar.manage_groups').html_safe, groups_path
 
           = render 'layouts/sidebar/group_navigation'
+
+          .auth #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
 
 
       .content-wrap
