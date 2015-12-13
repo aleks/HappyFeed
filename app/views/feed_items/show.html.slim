@@ -17,7 +17,7 @@
       .subline
         = l @feed_item.created_on_time
 
-      h1 = @feed_item.title
+      h1 = HTMLEntities.new.decode @feed_item.title
 
       .feed_content
-        = sanitize @feed_item.html
+        = sanitize HTMLEntities.new.decode @feed_item.html

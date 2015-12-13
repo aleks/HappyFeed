@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'simple_form'
 gem 'kaminari'
+gem 'htmlentities'
 
 # ElasticSearch
 # gem 'elasticsearch-model'
