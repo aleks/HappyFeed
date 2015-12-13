@@ -9,16 +9,12 @@
 
   .scoll_content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 40px 20px 0 20px;
     overflow-y: auto;
 
     .full_content {
-      margin-left: 10%;
-      margin-right: 10%;
-
-      img {
-        width: 100%;
-      }
+      margin-left: 14%;
+      margin-right: 14%;
 
       .subline {
         font-size: 1em;
@@ -44,6 +40,45 @@
         margin: 0;
         padding: 0;
       }
+
+      .feed_content {
+        margin-top: 30px;
+        padding-bottom: 100px;
+        line-height: 1.5em;
+
+        img {
+          text-align: center;
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+
+        pre {
+          code {
+            width: 100%;
+          }
+
+          width: 100%;
+
+          font-size: 0.8em;
+          line-height: 1.2em;
+          overflow: auto;
+          padding: 20px;
+          background: #f7f7f7;
+        }
+
+        blockquote {
+          font-family: Georgia,Times,Times New Roman,serif;
+          font-style: italic;
+          font-size: 1em;
+          line-height: 1.6em;
+          color: #777;
+          margin: 0;
+          padding: 0px 20px;
+          border-left: 2px solid #ccc;
+        }
+      }
+
 
     } // end .full_content
   }

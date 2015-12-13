@@ -42,6 +42,9 @@ a {
   .sidebar {
     width: 300px;
     border-right: 1px solid #ddd;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 300px;
 
     .header {
       .logo {
@@ -83,6 +86,20 @@ a {
           }
         }
       }
+    } // end of .navigation
+
+    .secondary-navigation {
+      margin-top: 30px;
+      text-align: center;
+      color: #777;
+
+      .logout {
+        margin-top: 20px;
+        a {
+          font-size: 0.8em;
+          padding: 4px 10px;
+        }
+      }
     }
   }
 
@@ -90,8 +107,7 @@ a {
     height: 100%;
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 200px;
-    // overflow-y: auto;
+    flex-basis: 500px;
   }
 }
 
@@ -152,12 +168,20 @@ a {
       li {
         float: left;
         margin: 0;
-        padding: 0 10px;
-        border-right: 1px solid #ddd;
+        margin-left: 15px;
+        padding: 0;
 
-        &:hover {
-          background: #f7f7f7;
+        a {
+          display: block;
+          margin-left: -15px;
+          padding: 0 15px;
+          border-right: 1px solid #ddd;
+
+          &:hover {
+            background: #f7f7f7;
+          }
         }
+
       }
     }
   }

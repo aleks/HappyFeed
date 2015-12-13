@@ -16,7 +16,9 @@ html
 
           = render 'layouts/sidebar/group_navigation'
 
-          .auth #{current_user.email} &middot; #{link_to 'logout', logout_path, method: :delete}
+          .secondary-navigation
+            .auth = current_user.email
+            .logout = link_to 'logout', logout_path, method: :delete, class: 'button'
 
 
       .content-wrap
