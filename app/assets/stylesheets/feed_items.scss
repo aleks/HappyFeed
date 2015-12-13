@@ -47,10 +47,18 @@
         line-height: 1.5em;
 
         img {
+          display: block;
+          margin: 0 auto;
           text-align: center;
           max-width: 100%;
           width: 100%;
-          height: auto;
+
+          &.loading_image {
+            width: 66px;
+            height: 66px;
+            margin: 0 auto;
+            padding: 20px;
+          }
         }
 
         pre {

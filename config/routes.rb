@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   # Fever API Endpoint
   get   '/fever' => 'fever#fever'
   post  '/fever' => 'fever#fever'
+
+  get '/image_proxy/:image_hash' => 'proxy#image_proxy', as: :image_proxy
 end

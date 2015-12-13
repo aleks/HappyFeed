@@ -18,6 +18,7 @@
 //= require 'jquery-modal'
 //= require 'groups'
 //= require 'feeds'
+//= require 'feed_items'
 //= requier_self
 
 $(function () {

@@ -20,4 +20,4 @@
       h1 = HTMLEntities.new.decode @feed_item.title
 
       .feed_content
-        = sanitize HTMLEntities.new.decode @feed_item.html
+        = build_feed_item_content @feed_item.html

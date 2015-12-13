@@ -43,6 +43,11 @@ gem 'feedjira'
 gem 'feedbag'
 gem 'faraday'
 
+# Feed Content handling
+gem 'html-pipeline'
+gem 'sanitize'
+gem 'httparty'
+
 group :development, :test do
   gem 'spring'
 
