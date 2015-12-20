@@ -6,6 +6,8 @@ gem 'rails', '4.2.2'
 
 gem 'sqlite3'
 
+gem 'dotenv-rails'
+
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
@@ -66,4 +68,8 @@ group :test do
   gem 'guard-rspec', require: false
   gem 'capybara', require: false
   gem 'webmock'
+end
+
+group :production do
+  gem 'mysql2'
 end
