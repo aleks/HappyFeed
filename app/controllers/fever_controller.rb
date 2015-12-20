@@ -1,6 +1,8 @@
 require 'json'
 
 class FeverController < ApplicationController
+  include FeedItemHelper
+
   protect_from_forgery except: :fever
 
   before_action :auth
@@ -106,7 +108,7 @@ class FeverController < ApplicationController
           feed_id: item.feed_id,
           title: item.title,
           author: item.author,
-          html: item.html,
+          html: build_feed_item_content(item.html, params[:api_key]),
           url: item.url,
           is_saved: (@api_user.item_starred?(item.id) ? 1 : 0),
           is_read: (@api_user.item_read?(item.id) ? 1 : 0),

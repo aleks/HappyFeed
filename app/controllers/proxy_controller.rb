@@ -1,5 +1,5 @@
 class ProxyController < ApplicationController
-  before_action :ensure_logged_in!
+  before_action :ensure_login_for_site_and_api
 
   # This should be replaced with real HTTP caching via NGINX or Varnish!
   # Just work in progress code.
@@ -27,5 +27,15 @@ class ProxyController < ApplicationController
     # image = HTTParty.get(url, verify: false)
     # send_data image.body, type: image.content_type, disposition: 'inline'
   end
+
+  private
+
+    def ensure_login_for_site_and_api
+      if params[:api_key].present? && User.find_by(auth_token: params[:api_key])
+        true
+      else
+        ensure_logged_in!
+      end
+    end
 
 end
