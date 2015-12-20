@@ -62,17 +62,16 @@
         }
 
         pre {
-          code {
-            width: 100%;
-          }
-
           width: 100%;
-
           font-size: 0.8em;
           line-height: 1.2em;
           overflow: auto;
           padding: 20px;
           background: #f7f7f7;
+
+          code {
+            width: 100%;
+          }
         }
 
         blockquote {
