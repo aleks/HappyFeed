@@ -2,7 +2,7 @@ module FeedItemHelper
 
   def build_feed_item_content(feed_item_html)
     context = {
-      image_proxy_base_url: 'http://localhost:3000/image_proxy/'
+      image_proxy_base_url: '/image_proxy/'
    }
 
     filter = HTML::Pipeline.new [
@@ -17,8 +17,6 @@ module FeedItemHelper
 
 end
 
-# TODO: Add some kind of security hash salt to prevent unwanted
-# requests and make sure to only allow urls from feed items.
 class ImageProxyFilter < HTML::Pipeline::Filter
   def call
     doc.search("img").each do |img|

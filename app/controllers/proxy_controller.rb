@@ -1,4 +1,5 @@
 class ProxyController < ApplicationController
+  before_action :ensure_logged_in!
 
   # This should be replaced with real HTTP caching via NGINX or Varnish!
   # Just work in progress code.
