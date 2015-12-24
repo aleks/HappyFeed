@@ -13,8 +13,8 @@
     overflow-y: auto;
 
     .full_content {
-      margin-left: 14%;
-      margin-right: 14%;
+      max-width: 800px;
+      margin: 0 auto;
 
       .subline {
         font-size: 1em;
