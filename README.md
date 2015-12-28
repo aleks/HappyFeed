@@ -14,3 +14,9 @@ More Info soon. :)
 ```
 
 Now go to http://localhost:3000/
+
+### Screenshots
+
+![Subscription](https://i.klaut.org/happyfeed_subscription.gif)
+
+![Drag and Drop Sidebar](https://i.klaut.org/happyfeed_dragndrop.gif)
