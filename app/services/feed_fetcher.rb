@@ -1,7 +1,4 @@
 class FeedFetcher
-  include ActionView::Helpers::SanitizeHelper
-
-  USER_AGENT = 'HappyFeed'
 
   def initialize(id)
     @feed = Feed.find(id)
@@ -47,11 +44,11 @@ class FeedFetcher
 
     def fetched_content(entry)
       if summary_equals_content?(entry)
-        entry.content.sanitize
+        entry.content
       else
-        return entry.summary.sanitize << entry.content.sanitize if entry.summary && entry.content
-        return entry.summary.sanitize if entry.summary && entry.content.nil?
-        return entry.content.sanitize if entry.summary.nil? && entry.content
+        return entry.summary << entry.content if entry.summary && entry.content
+        return entry.summary if entry.summary && entry.content.nil?
+        return entry.content if entry.summary.nil? && entry.content
       end
     end
 
