@@ -11,7 +11,7 @@ class ProxyController < ApplicationController
     url = URI.parse(Base64.strict_decode64(image_hash))
 
     unless Rails.cache.exist?(image_body_hash)
-      image = HTTParty.get(url, verify: false)
+      image = HTTParty.get(url, verify: false, headers: {'User-Agent': HF_USER_AGENT})
       image_body = Rails.cache.write(image_body_hash, image.body)
       image_content_type = Rails.cache.write(image_content_type_hash, image.content_type)
     else
@@ -24,7 +24,7 @@ class ProxyController < ApplicationController
     # If you're working with a reverse proxy, use this part and comment the above!
     #
     # url = URI.parse(Base64.strict_decode64(params[:image_hash]))
-    # image = HTTParty.get(url, verify: false)
+    # image = HTTParty.get(url, verify: false, headers: {"User-Agent": HF_USER_AGENT})
     # send_data image.body, type: image.content_type, disposition: 'inline'
   end
 
