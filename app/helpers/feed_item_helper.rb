@@ -8,16 +8,12 @@ module FeedItemHelper
 
       if api_key
         filters = [
-          HappyFeed::Videos::RewriteIframe,
-          HTML::Pipeline::SanitizationFilter,
-          HappyFeed::Videos::SecureEmbed,
+          HappyFeed::SlodownFilter::Filter,
           HappyFeed::ImageProxy::FilterWithAPIKey
         ]
       else
         filters = [
-          HappyFeed::Videos::RewriteIframe,
-          HTML::Pipeline::SanitizationFilter,
-          HappyFeed::Videos::SecureEmbed,
+          HappyFeed::SlodownFilter::Filter,
           HappyFeed::ImageProxy::Filter
         ]
       end

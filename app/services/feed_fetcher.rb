@@ -1,4 +1,5 @@
 class FeedFetcher
+  include ActionView::Helpers::SanitizeHelper
 
   def initialize(id)
     @feed = Feed.find(id)

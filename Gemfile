@@ -46,6 +46,7 @@ gem 'feedbag'
 gem 'faraday'
 
 # Feed Content handling
+gem 'slodown', github: 'hmans/slodown'
 gem 'html-pipeline'
 gem 'sanitize'
 gem 'httparty'
