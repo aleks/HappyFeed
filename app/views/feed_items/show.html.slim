@@ -8,8 +8,8 @@
         li = truncate @feed_item.title, length: 30
 
     .pagination
-      = link_to t('previous'), feed_item_path(@feed_item.feed_id, @previous_item), class: 'button' if @previous_item
-      = link_to t('next'), feed_item_path(@feed_item.feed_id, @next_item), class: 'button' if @next_item
+      = link_to t('previous'), feed_item_path(@feed_item.feed_id, @previous_item), class: 'button previous-page' if @previous_item
+      = link_to t('next'), feed_item_path(@feed_item.feed_id, @next_item), class: 'button next-page' if @next_item
 
 
   .scoll_content
