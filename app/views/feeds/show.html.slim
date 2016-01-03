@@ -11,7 +11,7 @@
       = link_to_previous_page @feed_items, 'Prev', class: 'button'
       = link_to_next_page @feed_items, 'Next', class: 'button'
 
-  .scoll_content
+  .scroll_content
     ul
       - @feed_items.each do |feed_item|
         li class="#{current_user.item_read?(feed_item.id) ? 'read' : 'unread'}"

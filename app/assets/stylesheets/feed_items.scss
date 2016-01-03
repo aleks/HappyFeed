@@ -7,7 +7,7 @@
   align-content: stretch;
   align-items: stretch;
 
-  .scoll_content {
+  .scroll_content {
     flex-grow: 1;
     padding: 40px 20px 0 20px;
     overflow-y: auto;
@@ -77,9 +77,23 @@
           padding: 0px 20px;
           border-left: 2px solid #ccc;
         }
-      }
 
+        p.current_paragraphe {
+          position: relative;
+          border-left: 1px solid #f00;
+          padding-left: 18px;
+          margin-left: -19px;
+        }
 
+        ul.current_paragraphe,
+        ol.current_paragraphe {
+          position: relative;
+          border-left: 1px solid #f00;
+          padding-left: 58px;
+          margin-left: -19px;
+        }
+
+      } // end .feed_content
     } // end .full_content
   }
 }
