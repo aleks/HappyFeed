@@ -32,10 +32,8 @@ ready = ->
       scrollable: ->
         curr_class_name = 'current_paragraph'
 
-        item_index = 0
-        $('.feed_content').children().each ->
-          $(this).addClass(curr_class_name) if item_index == 0
-          item_index += 1
+        first_item = $('.feed_content').children().first()
+        first_item.addClass(curr_class_name)
 
         $('body').keypress (e) ->
           if e.key == 'j' or e.key == 'k'

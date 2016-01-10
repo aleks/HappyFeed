@@ -3,7 +3,10 @@ module HappyFeed
 
     class Filter < HTML::Pipeline::TextFilter
       def call
-        HappyFeedFormatter.new(@text).sanitize.to_s.html_safe
+        content = HappyFeedFormatter.new(@text).sanitize.to_s.html_safe
+        content = content.gsub(/\<p\>\<\/p\>/,'')
+        content = content.gsub!("\n",'')
+        content
       end
     end
 
@@ -13,7 +16,7 @@ module HappyFeed
       def sanitize_config
         {
           elements: %w(
-            p br a span sub sup strong em div hr abbr s
+            p br a sub sup strong em hr abbr s
             ul ol li
             blockquote pre code kbd
             h1 h2 h3 h4 h5 h6

@@ -26,9 +26,19 @@ module HappyFeed
       end
 
       def wrap_image(image)
-        image_wrap = doc.document.create_element('div', :class => 'image_wrap')
+        if image.parent.name == "a"
+          image = image.parent
+        end
+
+        image_wrap = doc.document.create_element('span', :class => 'image_wrap')
         image_wrap.add_child(image.dup)
         image.replace(image_wrap)
+
+        if image_wrap.parent.name != 'p'
+          image_wrap_p = doc.document.create_element('p')
+          image_wrap_p.add_child(image_wrap.dup)
+          image_wrap.replace(image_wrap_p)
+        end
       end
     end
 
