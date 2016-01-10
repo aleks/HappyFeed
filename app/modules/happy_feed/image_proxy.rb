@@ -18,9 +18,17 @@ module HappyFeed
 
           # Assign real src as data attribute
           img['data-image-proxy-src'] = [context[:image_proxy_base_url], base64_src].join
+
+          wrap_image(img)
         end
 
         doc
+      end
+
+      def wrap_image(image)
+        image_wrap = doc.document.create_element('div', :class => 'image_wrap')
+        image_wrap.add_child(image.dup)
+        image.replace(image_wrap)
       end
     end
 

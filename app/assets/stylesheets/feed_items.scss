@@ -78,6 +78,12 @@
           border-left: 2px solid #ccc;
         }
 
+        h1.current_paragraph,
+        h2.current_paragraph,
+        h3.current_paragraph,
+        h4.current_paragraph,
+        h5.current_paragraph,
+        div.image_wrap.current_paragraph,
         p.current_paragraph {
           position: relative;
           border-left: 1px solid #f00;
