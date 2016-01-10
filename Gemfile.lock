@@ -104,6 +104,7 @@ GEM
     ffaker (2.0.0)
     ffi (1.9.9)
     formatador (0.2.5)
+    gem_patching (0.0.2)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     guard (2.12.6)
@@ -304,6 +305,7 @@ DEPENDENCIES
   feedbag
   feedjira
   ffaker
+  gem_patching
   guard-rspec
   html-pipeline
   htmlentities

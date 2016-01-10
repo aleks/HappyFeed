@@ -7,7 +7,7 @@ class FeedsController < ApplicationController
 
   def show
     @feed = current_user.feeds.find(params[:id])
-    @feed_items = @feed.feed_items.page(params[:page])
+    @feed_items = @feed.feed_items.order('id DESC').page(params[:page])
   end
 
   def new
@@ -36,6 +36,7 @@ class FeedsController < ApplicationController
   def discover
     feed_url = feed_params[:feed_url]
 
+    # TODO: Handle Redirects
     if Feedbag.feed?(feed_url)
       @feed_urls = [feed_url]
     else

@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 gem 'kaminari'
 gem 'htmlentities'
+gem 'gem_patching'
 
 # ElasticSearch
 # gem 'elasticsearch-model'
@@ -50,6 +51,7 @@ gem 'slodown', github: 'hmans/slodown'
 gem 'html-pipeline'
 gem 'sanitize'
 gem 'httparty'
+
 
 group :development, :test do
   gem 'spring'
