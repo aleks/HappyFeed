@@ -3,26 +3,30 @@ module HappyFeed
 
     class Filter < HTML::Pipeline::Filter
       def call
-        doc.search("img").each do |img|
-          next if img['src'].nil?
+        begin
+          doc.search("img").each do |img|
+            next if img['src'].nil?
 
-          base64_src = CGI::escape(Base64.strict_encode64(img['src'].strip))
+            base64_src = CGI::escape(Base64.strict_encode64(img['src'].strip))
 
-          # Remove width and height
-          img['width'] = nil
-          img['height'] = nil
+            # Remove width and height
+            img['width'] = nil
+            img['height'] = nil
 
-          # Add loading.gif as pre-image
-          img['class'] = 'loading_image'
-          img['src'] = ActionController::Base.helpers.asset_path('loading.gif')
+            # Add loading.gif as pre-image
+            img['class'] = 'loading_image'
+            img['src'] = ActionController::Base.helpers.asset_path('loading.gif')
 
-          # Assign real src as data attribute
-          img['data-image-proxy-src'] = [context[:image_proxy_base_url], base64_src].join
+            # Assign real src as data attribute
+            img['data-image-proxy-src'] = [context[:image_proxy_base_url], base64_src].join
 
-          wrap_image(img)
+            wrap_image(img)
+          end
+
+          doc
+        rescue Exception => e
+          puts e.message
         end
-
-        doc
       end
 
       def wrap_image(image)
