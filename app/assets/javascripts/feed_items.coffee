@@ -1,6 +1,7 @@
 ready = ->
 
   if $('.feed_content').length == 1
+
     # Async Loading for Images
     class ImageLoader
       load_item_image: (img) ->
@@ -23,7 +24,7 @@ ready = ->
     # Resize iFrames
     $('.full_content iframe').each ->
       iframe_width = $(this).width()
-      iframe_height = Math.round((iframe_width/16)*9);
+      iframe_height = Math.round((iframe_width/16)*9)
       $(this).height(iframe_height)
 
 
@@ -67,6 +68,7 @@ ready = ->
 
     feed_item_pagination = new FeedItemPagination
     feed_item_pagination.paginate()
+
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
