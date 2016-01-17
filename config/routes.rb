@@ -9,7 +9,12 @@ Rails.application.routes.draw do
       match 'update_feed_group', via: :post
     end
 
-    resources :feed_items, only: [:show], as: :items
+    resources :feed_items, only: [:show], as: :items do
+      member do
+        get 'mark/read' => 'feed_items#mark_read'
+        get 'mark/unread' => 'feed_items#mark_unread'
+      end
+    end
   end
   resources :groups, except: [:new]
 

@@ -2,6 +2,17 @@ ready = ->
 
   if $('.feed_content').length == 1
 
+    $('.mark_unread').click ->
+      $(this).text('Marked as unread!')
+
+
+    # Resize iFrames
+    $('.full_content iframe').each ->
+      iframe_width = $(this).width()
+      iframe_height = Math.round((iframe_width/16)*9)
+      $(this).height(iframe_height)
+
+
     # Async Loading for Images
     class ImageLoader
       load_item_image: (img) ->
@@ -19,13 +30,6 @@ ready = ->
     $('.full_content img').each ->
       image_loader = new ImageLoader
       image_loader.load_item_image(this)
-
-
-    # Resize iFrames
-    $('.full_content iframe').each ->
-      iframe_width = $(this).width()
-      iframe_height = Math.round((iframe_width/16)*9)
-      $(this).height(iframe_height)
 
 
     # Scroll Content via j/k and arrow up/down
