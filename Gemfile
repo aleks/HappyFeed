@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.5.1'
 
 gem 'sqlite3'
 
@@ -64,12 +64,12 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails'
-  gem 'shoulda-matchers', require: false
+  gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'guard-rspec', require: false
-  gem 'capybara', require: false
+  gem 'capybara'
   gem 'webmock'
 end
 
