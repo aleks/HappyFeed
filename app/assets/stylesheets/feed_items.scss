@@ -9,24 +9,54 @@
 
   .scroll_content {
     flex-grow: 1;
-    padding: 40px 20px 0 20px;
+    padding: 0 20px 0 20px;
     overflow-y: auto;
 
     .full_content {
       max-width: 700px;
       margin: 0 auto;
 
-      .subline {
+      .header {
         font-size: 1em;
         color: #888;
+        padding: 20px 0 10px 0;
 
-        .created_on_time,
-        .word_count,
-        .length_in_time {
+        ul, li {
+          padding: 0;
+          margin: 0 0 10px 0;
+          list-style: none;
+
+          a {
+            &.button {
+              color: #999;
+              float: right;
+              padding: 4px 10px;
+            }
+
+            &.mark_saved, &.mark_unsaved {
+              font-size: 1.4em;
+              line-height: 1.15em;
+              padding: 0px 4px 0 5px;
+              margin-right: 10px;
+            }
+            &.mark_unsaved {
+              color: #fff;
+              border-color: #E54D41;
+              background: #E54D41;
+            }
+          }
+        }
+
+        .created_on_time, .word_count, .length_in_time {
           float: left;
-          padding-right: 6px;
-          margin-right: 6px;
+          line-height: 28px;
+          margin-right: 10px;
+          padding-right: 10px;
           border-right: 1px solid #ddd;
+
+          &:last-child {
+            border-right: 0;
+          }
         }
 
         &:after {
@@ -36,15 +66,16 @@
         }
       }
 
-      h1 {
-        margin: 0;
-        padding: 0;
-      }
-
       .feed_content {
-        margin-top: 30px;
+        margin-top: 20px;
         padding-bottom: 100px;
         line-height: 1.5em;
+
+        h1.feed_item_title {
+          margin: 0 0 25px 0;
+          padding: 0;
+          line-height: 1.2em;
+        }
 
         img {
           display: block;
@@ -52,6 +83,13 @@
           text-align: center;
           max-width: 100%;
           padding: 20px 0;
+        }
+
+        hr {
+          margin: 20px 0;
+          padding: 0;
+          border: 0;
+          border-top: 1px solid #efefef;
         }
 
         pre {

@@ -20,8 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  next: 'Next'
-  previous: 'Previous'
+  next: 'Newer'
+  previous: 'Older'
   time:
     formats:
       default: '%d.%m.%Y'
@@ -34,7 +34,7 @@ en:
       sidebar:
         add_feed: '<i class="ion-plus-round"></i> Add Feed'
         manage_groups: '<i class="ion-pricetags"></i> Manage Groups'
-  feeds:
-    show:
-      is_saved: 'Fav'
-      word_count: ' Words'
+  feed:
+    is_unsaved: '<i class="ion-ios-star-outline"></i>'
+    is_saved: '<i class="ion-ios-star"></i>'
+    word_count: ' Words'

@@ -2,10 +2,6 @@ ready = ->
 
   if $('.feed_content').length == 1
 
-    $('.mark_unread').click ->
-      $(this).text('Marked as unread!')
-
-
     # Resize iFrames
     $('.full_content iframe').each ->
       iframe_width = $(this).width()
@@ -32,47 +28,58 @@ ready = ->
       image_loader.load_item_image(this)
 
 
-    # Scroll Content via j/k and arrow up/down
+    # Keyboard Shortcuts
     class FeedItemScrolling
-      scrollable: ->
+      load: ->
         curr_class_name = 'current_paragraph'
 
         first_item = $('.feed_content').children().first()
         first_item.addClass(curr_class_name)
 
         $('body').keypress (e) ->
-          if e.key == 'j' or e.key == 'k'
-            e.preventDefault()
-            current_item = $('.' + curr_class_name)
-            next_item = $(current_item).next() if e.key == 'j'
-            next_item = $(current_item).prev() if e.key == 'k'
+          unless $('.modal').is(':visible')
+            if e.key == 'j' or e.key == 'k'
+              e.preventDefault()
+              current_item = $('.' + curr_class_name)
+              next_item = $(current_item).next() if e.key == 'j'
+              next_item = $(current_item).prev() if e.key == 'k'
 
-            if next_item.length == 1
-              scroll_top_position = $('.scroll_content').scrollTop() + $(next_item).position().top -= 155
-              $('.scroll_content').scrollTop(scroll_top_position)
-              $(current_item).removeClass(curr_class_name)
-              $(next_item).addClass(curr_class_name)
+              if next_item.length == 1
+                scroll_top_position = $('.scroll_content').scrollTop() + $(next_item).position().top -= 155
+                $('.scroll_content').scrollTop(scroll_top_position)
+                $(current_item).removeClass(curr_class_name)
+                $(next_item).addClass(curr_class_name)
+
+
+    class FeedItemPagination
+      load: ->
+        $('body').keypress (e) ->
+          unless $('.modal').is(':visible')
+            if e.key == 'h' or e.key == 'ArrowLeft'
+              e.preventDefault()
+              if previous_page_href = $('.previous-page').attr('href')
+                Turbolinks.visit(previous_page_href)
+            if e.key == 'l' or e.key == 'ArrowRight'
+              e.preventDefault()
+              if next_page_href = $('.next-page').attr('href')
+                Turbolinks.visit(next_page_href)
+
+    class FeedItemSaving
+      load: ->
+        $('body').keypress (e) ->
+          unless $('.modal').is(':visible')
+            if e.key == 's'
+              $('.toggle_save_unsave').click()
+
 
     feed_item_scrolling = new FeedItemScrolling
-    feed_item_scrolling.scrollable()
-
-
-    # Next / Previous Page via j/k keys
-    class FeedItemPagination
-      paginate: ->
-        $('body').keypress (e) ->
-          if e.key == 'h' or e.key == 'ArrowLeft'
-            e.preventDefault()
-            if previous_page_href = $('.previous-page').attr('href')
-              window.location.href = previous_page_href
-          if e.key == 'l' or e.key == 'ArrowRight'
-            e.preventDefault()
-            if next_page_href = $('.next-page').attr('href')
-              window.location.href = next_page_href
+    feed_item_scrolling.load()
 
     feed_item_pagination = new FeedItemPagination
-    feed_item_pagination.paginate()
+    feed_item_pagination.load()
 
+    feed_item_saving = new FeedItemSaving
+    feed_item_saving.load()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

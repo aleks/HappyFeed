@@ -17,10 +17,10 @@
         li class="#{current_user.item_read?(feed_item.id) ? 'read' : 'unread'}"
           h2
             - if current_user.item_starred?(feed_item.id)
-              span.is_saved = t('.is_saved')
+              span.is_saved = t('feed.is_saved').html_safe
             = link_to feed_item.title, feed_item_path(@feed, feed_item)
           .subline
             .created_on_time = l(feed_item.created_on_time)
             - if feed_item.html
-              .word_count = feed_item.html.split(' ').count.to_s + t('.word_count')
+              .word_count = feed_item.html.split(' ').count.to_s + t('feed.word_count')
               .length_in_time = time_ago_in_words(feed_item.length_in_time.minutes.from_now)

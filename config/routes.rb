@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       member do
         get 'mark/read' => 'feed_items#mark_read'
         get 'mark/unread' => 'feed_items#mark_unread'
+        get 'mark/saved' => 'feed_items#mark_saved'
+        get 'mark/unsaved' => 'feed_items#mark_unsaved'
       end
     end
   end
