@@ -1,9 +1,9 @@
 .group_navigation
-  - current_user.groups.each do |group|
+  - current_user.get_sidebar_feeds.each do |group|
     .group_title = group.title
     - if group.feeds.any?
       ul id="group_#{group.id}" data-group-id="#{group.id}"
-        - group.feeds.each do |feed|
+        - group.feeds.order(:title).each do |feed|
           li.group_item data-feed-id="#{feed.id}"
             .unread_status
               - if feed.unread_items(current_user.id).any?

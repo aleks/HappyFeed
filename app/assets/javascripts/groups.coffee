@@ -4,5 +4,6 @@ class Group
       type: "POST",
       dataType: 'json',
       data: { feed: { feed_id: data['feed_id'], group_id: data['group_id'] } }
+    Turbolinks.visit()
 
 @group = new Group

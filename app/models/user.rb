@@ -60,6 +60,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def get_sidebar_feeds
+    groups.includes(feeds: [:feed_items])
+  end
+
   private
 
     def remove_feed_from_groups(feed)
