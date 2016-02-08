@@ -5,6 +5,11 @@
       ul id="group_#{group.id}" data-group-id="#{group.id}"
         - group.feeds.each do |feed|
           li.group_item data-feed-id="#{feed.id}"
+            .unread_status
+              - if feed.unread_items(current_user.id).any?
+                i class="ion-record"
+              - else
+                i class="ion-ios-circle-outline"
             = link_to feed.title, feed
     - else
       ul id="group_#{group.id}" data-group-id="#{group.id}"

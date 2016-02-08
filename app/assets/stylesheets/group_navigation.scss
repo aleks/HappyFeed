@@ -12,6 +12,13 @@
     padding: 0;
 
     li.group_item, li.group_item_placeholder {
+      .unread_status {
+        float: right;
+        color: #ccc;
+        font-size: 0.9em;
+        padding: 8px 10px;
+      }
+
       a, span {
         display: block;
         font-size: 0.9em;
