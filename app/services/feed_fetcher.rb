@@ -21,7 +21,7 @@ class FeedFetcher
   end
 
   def self.fetch_all
-    Feed.all.each {|feed| self.new(feed.id).fetch }
+    Feed.all.each {|feed| FeedFetcherJob.perform_later(feed.id) }
   end
 
   private

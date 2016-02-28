@@ -38,8 +38,8 @@ gem 'gem_patching'
 # gem 'elasticsearch-rails'
 
 # Queuing / Backgrounder etc.
-# gem 'whenever'
-# gem 'sucker_punch'
+gem 'whenever'
+gem 'sucker_punch'
 
 # Feed handling
 gem 'feedjira'
