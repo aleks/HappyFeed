@@ -50,6 +50,7 @@ gem 'html-pipeline'
 gem 'sanitize'
 gem 'httparty'
 
+gem 'puma'
 
 group :development, :test do
   gem 'sqlite3'
