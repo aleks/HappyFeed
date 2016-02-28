@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 
-gem 'sqlite3'
-
 gem 'dotenv-rails'
 
 gem 'sass-rails', '~> 5.0'
@@ -54,6 +52,7 @@ gem 'httparty'
 
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'spring'
 
   gem 'pry-rails'
