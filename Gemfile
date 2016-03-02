@@ -41,7 +41,7 @@ gem 'sucker_punch'
 
 # Feed handling
 gem 'feedjira'
-gem 'feedbag'
+gem 'feedbag', github: 'aleks/feedbag'
 gem 'faraday'
 
 # Feed Content handling
