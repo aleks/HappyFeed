@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 
-gem 'sqlite3'
-
 gem 'dotenv-rails'
 
 gem 'sass-rails', '~> 5.0'
@@ -38,12 +36,12 @@ gem 'gem_patching'
 # gem 'elasticsearch-rails'
 
 # Queuing / Backgrounder etc.
-# gem 'whenever'
-# gem 'sucker_punch'
+gem 'whenever'
+gem 'sucker_punch'
 
 # Feed handling
 gem 'feedjira'
-gem 'feedbag'
+gem 'feedbag', github: 'aleks/feedbag'
 gem 'faraday'
 
 # Feed Content handling
@@ -52,8 +50,10 @@ gem 'html-pipeline'
 gem 'sanitize'
 gem 'httparty'
 
+gem 'puma'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'spring'
 
   gem 'pry-rails'
