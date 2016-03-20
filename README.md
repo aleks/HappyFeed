@@ -5,7 +5,7 @@ More Info soon. :)
 
 [![Build Status](https://travis-ci.org/aleks/HappyFeed.svg?branch=master)](https://travis-ci.org/aleks/HappyFeed)
 
-### Quickstart
+### Local setup
 
 ```
  bundle install
@@ -15,8 +15,18 @@ More Info soon. :)
 
 Now go to http://localhost:3000/
 
-### Screenshots
+### Docker setup
 
-![Subscription](https://i.klaut.org/happyfeed_subscription.gif)
+You should edit the database passwords in docker-compose.yml. This will change in the future, but should be good enough for now.
 
-![Drag and Drop Sidebar](https://i.klaut.org/happyfeed_dragndrop.gif)
+```
+# Clone Repository
+git clone git@github.com:aleks/HappyFeed.git happyfeed
+
+# Build Image and Start
+docker-compose build
+docker-compose up
+
+# Run Database migration
+docker-compose run web bundle exec rake db:migrate
+```
