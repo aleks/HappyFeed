@@ -22,6 +22,7 @@ You should edit the database passwords in docker-compose.yml. This will change i
 ```
 # Clone Repository
 git clone git@github.com:aleks/HappyFeed.git happyfeed
+cd happyfeed
 
 # Build Image and Start
 docker-compose build
