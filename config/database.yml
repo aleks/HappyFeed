@@ -23,7 +23,6 @@ test:
 production:
   encoding: utf8
   adapter: mysql2
-  socket: <%= ENV["DATABASE_SOCKET"] %>
   database: <%= ENV["DATABASE_NAME"] %>
   username: <%= ENV["DATABASE_USER"] %>
   password: <%= ENV["DATABASE_PASSWORD"] %>

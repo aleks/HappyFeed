@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 
-gem 'dotenv-rails'
-
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
@@ -49,8 +47,6 @@ gem 'slodown', github: 'hmans/slodown'
 gem 'html-pipeline'
 gem 'sanitize'
 gem 'httparty'
-
-gem 'puma'
 
 group :development, :test do
   gem 'sqlite3'
