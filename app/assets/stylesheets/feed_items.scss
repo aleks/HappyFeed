@@ -137,6 +137,10 @@
           margin-left: -30px;
         }
 
+        pre.current_paragraph {
+          border-left: 2px solid #f00;
+        }
+
       } // end .feed_content
     } // end .full_content
   }
