@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150925213652) do
     t.integer  "feed_id"
     t.string   "title"
     t.string   "author"
-    t.string   "html"
+    t.text     "html"
     t.string   "url"
     t.datetime "created_on_time"
     t.datetime "created_at",      null: false

@@ -4,7 +4,7 @@ class CreateFeedItems < ActiveRecord::Migration
       t.integer :feed_id
       t.string :title
       t.string :author
-      t.string :html
+      t.text :html
       t.string :url
       t.datetime :created_on_time
 
