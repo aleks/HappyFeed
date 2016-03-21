@@ -1,7 +1,7 @@
 # HappyFeed
 #### A Fever API compatible RSS Server.
 
-More Info soon. :)
+This project is far from finished. I'm working on this in my free time and use it mainly as my own RSS reader/server. If you like to contribute, feel free to send a pull request. If you want to add bigger features or change things, please open an issue or contact me directly.
 
 [![Build Status](https://travis-ci.org/aleks/HappyFeed.svg?branch=master)](https://travis-ci.org/aleks/HappyFeed)
 
@@ -31,3 +31,15 @@ docker-compose up
 # Run Database migration
 docker-compose run web bundle exec rake db:migrate
 ```
+
+### Usage
+
+If you want to use HappyFeed with a Fever-compatible RSS Reader (ReadKit, Reeder, Unread and many more), use the following address as the "Server Address" and login with your HappyFeed account.
+
+```
+http(s)://your-host.tld/fever
+```
+
+### Screenshot
+
+![HappyFeed](https://raw.githubusercontent.com/aleks/HappyFeed/master/happyfeed.png)
