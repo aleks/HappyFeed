@@ -11,9 +11,22 @@ COPY Gemfile /tmp/
 COPY Gemfile.lock /tmp/
 RUN bundle install --jobs=3 --retry=3
 
+# Setup Nginx config
 RUN rm -f /etc/service/nginx/down /etc/nginx/sites-enabled/default
 COPY config/docker/nginx-site.conf /etc/nginx/sites-enabled/happyfeed.conf
 COPY config/docker/nginx.conf /etc/nginx/main.d/happyfeed-setup.conf
+
+# Add self-signed certificate with a randomly generated key
+COPY config/docker/openssl.conf /etc/nginx/ssl/openssl.conf
+RUN mkdir -p /etc/nginx/ssl/ \
+    && cd /etc/nginx/ssl/ \
+    && SSL_PASS=$(openssl rand -base64 30) \
+    && openssl genrsa -des3 -out server.key -passout pass:$(echo $SSL_PASS) 1024 \
+    && openssl req -config openssl.conf -new -key server.key -out server.csr -passin pass:$(echo $SSL_PASS) \
+    && cp server.key server.key.org \
+    && openssl rsa -in server.key.org -out server.key -passin pass:$(echo $SSL_PASS) \
+    && openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt \
+    && openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
 
 RUN mkdir /home/app/happyfeed
 COPY . /home/app/happyfeed
