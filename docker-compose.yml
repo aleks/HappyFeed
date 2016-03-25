@@ -1,16 +1,13 @@
 version: '2'
 services:
   db:
+    env_file: .env
     image: mysql
     container_name: happyfeed_mysql
     ports:
       - "3306:3306"
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: true
-      MYSQL_DATABASE: happyfeed
-      MYSQL_USER: happyfeed
-      MYSQL_PASSWORD: ENTER_DATABASE_PASSWORD_HERE
   web:
+    env_file: .env
     container_name: happyfeed_web
     build: .
     ports:
@@ -22,10 +19,3 @@ services:
       - db
     depends_on:
       - db
-    environment:
-      RAILS_ENV: production
-      SECRET_KEY_BASE: ENTER_SECRET_KEY_BASE_HERE
-      DATABASE_NAME: happyfeed
-      DATABASE_USER: happyfeed
-      DATABASE_PASSWORD: ENTER_DATABASE_PASSWORD_HERE
-      DATABASE_HOST: db
