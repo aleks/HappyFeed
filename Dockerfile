@@ -38,7 +38,8 @@ WORKDIR /home/app/happyfeed
 RUN sudo -u app RAILS_ENV=production bin/rake assets:precompile
 
 # Add cronjob
-RUN echo "*/5 * * * * app /bin/bash -l -c 'cd /home/app/happyfeed/ && /usr/bin/ruby -- bin/rails runner -e production '\''FeedFetcher.fetch_all'\'''" >> /etc/cron.d/happyfeed
+COPY config/docker/happyfeed-cron /etc/cron.d/happyfeed-cron
+RUN chmod +x /etc/cron.d/happyfeed-cron
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
