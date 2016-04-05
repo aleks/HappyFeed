@@ -35,10 +35,6 @@ gem 'gem_patching'
 # gem 'elasticsearch-model'
 # gem 'elasticsearch-rails'
 
-# Queuing / Backgrounder etc.
-gem 'whenever'
-gem 'sucker_punch'
-
 # Feed handling
 gem 'feedjira'
 gem 'feedbag', github: 'aleks/feedbag'
@@ -59,6 +55,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
+  gem 'sucker_punch'
 end
 
 group :test do
@@ -73,4 +70,6 @@ end
 
 group :production do
   gem 'mysql2'
+  gem 'sidekiq'
+  gem 'sinatra', :require => nil # for sidekiq dashboard
 end
