@@ -1,4 +1,4 @@
-FROM phusion/passenger-ruby22:0.9.15
+FROM phusion/passenger-full:0.9.18
 
 # Set correct environment variables.
 ENV HOME /root
