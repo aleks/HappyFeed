@@ -33,5 +33,5 @@ Rails.application.routes.draw do
   get   '/fever' => 'fever#fever'
   post  '/fever' => 'fever#fever'
 
-  get '/image_proxy/:image_hash(/api_key/:api_key)' => 'proxy#image_proxy', as: :image_proxy
+  get '/image_proxy/:image_hash' => 'proxy#image_proxy', as: :image_proxy
 end

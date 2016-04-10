@@ -21,6 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
+  pool: 25
   encoding: utf8
   adapter: mysql2
   database: <%= ENV["DATABASE_NAME"] %>

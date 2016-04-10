@@ -1,9 +1,13 @@
 class FeedItem < ActiveRecord::Base
+  include FeedItemHelper
+
   belongs_to :feed
   has_many :feed_item_reads
   has_many :feed_item_stars
 
   validates :feed_id, :title, :url, presence: true
+
+  after_commit :enqueue_preload_images, on: :create
 
   def mark_as(mark, user_id)
     case mark
@@ -36,5 +40,23 @@ class FeedItem < ActiveRecord::Base
 
   def length_in_time(wpm = 130)
     word_count.to_f / wpm.to_f
+  end
+
+  def enqueue_preload_images
+    FeedItemJob.perform_later(id)
+  end
+
+  def preload_images
+    rendered_html = build_feed_item_content(html, true)
+    image_urls = URI.extract(rendered_html).find_all {|url| url =~ /image\_proxy/}
+    if image_urls.any?
+      image_urls.each do |image_url|
+        begin
+          HTTParty.get(image_url, verify: false, headers: {'User-Agent' => HF_USER_AGENT})
+        rescue HTTParty::Error
+          # fail
+        end
+      end
+    end
   end
 end

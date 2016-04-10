@@ -5,7 +5,7 @@ module HappyFeed
       def call
         content = HappyFeedFormatter.new(@text).sanitize.to_s.html_safe
         content = content.gsub(/\<p\>\<\/p\>/,'')
-        content = content.gsub!("\n",'')
+        content = content.gsub("\n",'')
         content
       end
     end

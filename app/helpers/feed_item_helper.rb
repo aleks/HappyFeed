@@ -1,15 +1,17 @@
 module FeedItemHelper
-  def build_feed_item_content(feed_item_html, api_key = nil)
+  def build_feed_item_content(feed_item_html, external = nil)
     if feed_item_html
-      context = {
-        api_key: "/api_key/#{api_key}",
-        image_proxy_base_url: 'http://localhost:3000/image_proxy/'
-      }
 
-      if api_key
+      if Rails.env.production?
+        context = { image_proxy_base_url: "https://#{ENV['SITE_URL']}/image_proxy/" }
+      else
+        context = { image_proxy_base_url: "http://localhost:3000/image_proxy/" }
+      end
+
+      if external
         filters = [
           HappyFeed::SlodownFilter::Filter,
-          HappyFeed::ImageProxy::FilterWithAPIKey
+          HappyFeed::ImageProxy::FilterExternal
         ]
       else
         filters = [

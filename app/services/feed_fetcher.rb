@@ -6,17 +6,15 @@ class FeedFetcher
   end
 
   def fetch
-    if @feed.last_updated_on_time.nil? || @feed.last_updated_on_time <= DateTime.now - 1.hour
-      begin
-        @fetched = Feedjira::Feed.fetch_and_parse(@feed.feed_url)
-
-        unless @fetched == 304 || @fetched == 200 || @fetched == 404
-          update_feed_info!
-          store_feed_items
-        end
-      rescue Exception => e
-        puts e.message
+    begin
+      @fetched = Feedjira::Feed.fetch_and_parse(@feed.feed_url)
+      unless @fetched == 304 || @fetched == 200 || @fetched == 404
+        update_feed_info!
+        store_feed_items
       end
+    rescue Exception => e
+      fetch_log = Logger.new('log/feed_fetcher.log')
+      fetch_log.error "Feed: ID:#{@feed.id} Message: #{e.message}"
     end
   end
 

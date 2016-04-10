@@ -46,7 +46,7 @@ module HappyFeed
       end
     end
 
-    class FilterWithAPIKey < HTML::Pipeline::Filter
+    class FilterExternal < HTML::Pipeline::Filter
       def call
         doc.search("img").each do |img|
           next if img['src'].nil?
@@ -58,7 +58,7 @@ module HappyFeed
           img['height'] = nil
 
           # Assign real src as data attribute
-          img['src'] = [context[:image_proxy_base_url], base64_src, context[:api_key]].join
+          img['src'] = [context[:image_proxy_base_url], base64_src].join
         end
 
         doc
