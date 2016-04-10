@@ -72,4 +72,5 @@ group :production do
   gem 'mysql2'
   gem 'sidekiq'
   gem 'sinatra', :require => nil # for sidekiq dashboard
+  gem 'dalli'
 end

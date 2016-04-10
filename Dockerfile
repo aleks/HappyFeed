@@ -44,6 +44,9 @@ RUN chmod +x /etc/cron.d/happyfeed-cron
 # Enable Redis
 RUN rm -f /etc/service/redis/down
 
+# Enable Memcached
+RUN rm -f /etc/service/memcached/down
+
 # Add Sidekiq to runit services
 RUN mkdir /etc/service/sidekiq
 ADD config/docker/sidekiq-runit /etc/service/sidekiq/run
