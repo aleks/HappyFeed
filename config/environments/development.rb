@@ -40,5 +40,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Use Sidekiq for Active Job
-  config.active_job.queue_adapter = :sucker_punch
+  config.active_job.queue_adapter = :sidekiq
 end

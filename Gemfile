@@ -26,6 +26,10 @@ gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Background Jobs
+gem 'sidekiq'
+gem 'sinatra', :require => nil # for sidekiq dashboard
+
 gem 'simple_form'
 gem 'kaminari'
 gem 'htmlentities'
@@ -55,7 +59,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
-  gem 'sucker_punch'
 end
 
 group :test do
@@ -70,7 +73,5 @@ end
 
 group :production do
   gem 'mysql2'
-  gem 'sidekiq'
-  gem 'sinatra', :require => nil # for sidekiq dashboard
   gem 'dalli'
 end
