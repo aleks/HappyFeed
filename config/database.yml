@@ -21,10 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  pool: 25
+  adapter: postgresql
   encoding: utf8
-  adapter: mysql2
-  database: <%= ENV["DATABASE_NAME"] %>
-  username: <%= ENV["DATABASE_USER"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-  host: <%= ENV["DATABASE_HOST"] %>
+  database: happyfeed
+  username: postgres
+  password:
+  host: db
