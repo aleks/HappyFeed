@@ -4,7 +4,7 @@ class CreateFeeds < ActiveRecord::Migration
       t.string :title
       t.string :feed_url
       t.string :site_url
-      t.boolean :is_spark, default: 0
+      t.boolean :is_spark, default: false
       t.datetime :last_updated_on_time
 
       t.timestamps null: false
