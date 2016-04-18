@@ -168,7 +168,6 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.4.2)
     nenv (0.2.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -178,6 +177,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     open_uri_redirections (0.2.1)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -342,7 +342,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
-  mysql2
+  pg
   pry-rails
   quiet_assets
   rails (= 4.2.5.1)

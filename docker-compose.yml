@@ -1,14 +1,10 @@
 version: '2'
 services:
   db:
-    env_file: .env
-    image: mysql
+    image: postgres
     container_name: happyfeed_mysql
     ports:
-      - "3306:3306"
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      - "5432"
   web:
     env_file: .env
     container_name: happyfeed_web
