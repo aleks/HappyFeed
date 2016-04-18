@@ -2,7 +2,7 @@ version: '2'
 services:
   db:
     image: postgres
-    container_name: happyfeed_mysql
+    container_name: happyfeed_db
     ports:
       - "5432"
   web:
