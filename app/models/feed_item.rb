@@ -7,8 +7,6 @@ class FeedItem < ActiveRecord::Base
 
   validates :feed_id, :title, :url, presence: true
 
-  after_commit :enqueue_preload_images, on: :create
-
   def mark_as(mark, user_id)
     case mark
       when 'read'
@@ -40,10 +38,6 @@ class FeedItem < ActiveRecord::Base
 
   def length_in_time(wpm = 130)
     word_count.to_f / wpm.to_f
-  end
-
-  def enqueue_preload_images
-    FeedItemJob.perform_later(id)
   end
 
   def preload_images
