@@ -34,7 +34,7 @@ class Feed
         if data['error']
           display_error(data)
           hide_loading()
-          $('.to-screen-2').prop('disabled', true)
+          $('.to-screen-2').prop('disabled', false)
         else if data['feed_urls'].length == 1
           update_feed_url(data['feed_urls'][0])
           $('.to-screen-2').prop('disabled', false)
