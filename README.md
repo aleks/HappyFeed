@@ -29,6 +29,7 @@ docker-compose build
 docker-compose up
 
 # Run Database migration
+docker-compose run web bundle exec rake db:create
 docker-compose run web bundle exec rake db:migrate
 ```
 
