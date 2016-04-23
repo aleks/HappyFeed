@@ -95,6 +95,10 @@ GEM
     dotenv-rails (2.1.1)
       dotenv (= 2.1.1)
       railties (>= 4.0, < 5.1)
+    dragonfly (1.0.10)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3.0)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -329,6 +333,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   dalli
   dotenv-rails
+  dragonfly
   factory_girl_rails
   faraday
   feedbag!

@@ -47,16 +47,14 @@ class FeedItem < ActiveRecord::Base
   end
 
   def preload_images
-    rendered_html = build_feed_item_content(html, true)
-    image_urls = URI.extract(rendered_html).find_all {|url| url =~ /image\_proxy/}
-    if image_urls.any?
-      image_urls.each do |image_url|
-        begin
-          HTTParty.get(image_url, verify: false, headers: {'User-Agent' => HF_USER_AGENT})
-        rescue HTTParty::Error
-          # fail
-        end
-      end
+    if self.html.present?
+      filters = [HappyFeed::ImageProxyFilter::Filter]
+      filter = HTML::Pipeline.new(filters)
+      html = filter.call(self.html)
+      new_html = html[:output].to_s.html_safe
+
+      update_attribute(:html, new_html)
     end
   end
+
 end

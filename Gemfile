@@ -40,6 +40,7 @@ gem 'gem_patching'
 # gem 'elasticsearch-rails'
 
 # Feed handling
+gem 'dragonfly'
 gem 'feedjira'
 gem 'feedbag', github: 'aleks/feedbag'
 gem 'faraday'

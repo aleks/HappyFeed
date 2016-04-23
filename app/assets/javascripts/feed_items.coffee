@@ -9,25 +9,6 @@ ready = ->
       $(this).height(iframe_height)
 
 
-    # Async Loading for Images
-    class ImageLoader
-      load_item_image: (img) ->
-        target_image = img
-        image_url = $(target_image).data('image-proxy-src')
-
-        if image_url
-          $.ajax image_url,
-            cache: true,
-            processData: false
-            complete: ->
-              $(target_image).attr('src', image_url)
-              $(target_image).removeClass('loading_image')
-
-    $('.full_content img').each ->
-      image_loader = new ImageLoader
-      image_loader.load_item_image(this)
-
-
     # Keyboard Shortcuts
     class FeedItemScrolling
       load: ->
