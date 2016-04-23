@@ -26,7 +26,7 @@ class Feed < ActiveRecord::Base
   private
 
     def fetch_feed
-      FeedFetcher.new(id).fetch
+      FeedFetcherJob.perform_later(id)
     end
 
     def feed_url_is_reachable
