@@ -38,3 +38,4 @@ en:
     is_unsaved: '<i class="ion-ios-star-outline"></i>'
     is_saved: '<i class="ion-ios-star"></i>'
     word_count: ' Words'
+    url_open: ' <i class="ion-android-open"></i>'

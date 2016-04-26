@@ -45,16 +45,20 @@ ready = ->
       load: ->
         unless $('.modal').is(':visible')
           Mousetrap.bind ['s'], (e) ->
-            if e.code == 'KeyS'
-              $('.toggle_save_unsave').click()
+            $('.toggle_save_unsave').click()
 
     class FeedItemUnread
       load: ->
         unless $('.modal').is(':visible')
           Mousetrap.bind ['u'], (e) ->
-            if e.code == 'KeyU'
-              $('.mark_unread').click()
+            $('.mark_unread').click()
 
+    class FeedItemUrlOpen
+      load: ->
+        unless $('.modal').is(':visible')
+          Mousetrap.bind ['o'], (e) ->
+            url = $('a.url_open').attr('href')
+            window.open(url)
 
     feed_item_scrolling = new FeedItemScrolling
     feed_item_scrolling.load()
@@ -67,6 +71,9 @@ ready = ->
 
     feed_item_unread = new FeedItemUnread
     feed_item_unread.load()
+
+    feed_item_url_open = new FeedItemUrlOpen
+    feed_item_url_open.load()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
