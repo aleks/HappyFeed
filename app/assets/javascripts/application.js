@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require 'bind_with_delay'
 //= require 'Sortable'
+//= require 'mousetrap.min'
 //= require 'jquery-modal'
 //= require 'groups'
 //= require 'feeds'

@@ -17,40 +17,43 @@ ready = ->
         first_item = $('.feed_content').children().first()
         first_item.addClass(curr_class_name)
 
-        $('body').keypress (e) ->
-          unless $('.modal').is(':visible')
-            if e.key == 'j' or e.key == 'k'
-              e.preventDefault()
-              current_item = $('.' + curr_class_name)
-              next_item = $(current_item).next() if e.key == 'j'
-              next_item = $(current_item).prev() if e.key == 'k'
+        unless $('.modal').is(':visible')
+          Mousetrap.bind ['j', 'k'], (e) ->
+            current_item = $('.' + curr_class_name)
+            next_item = $(current_item).next() if e.code == 'KeyJ'
+            next_item = $(current_item).prev() if e.code == 'KeyK'
 
-              if next_item.length == 1
-                scroll_top_position = $('.scroll_content').scrollTop() + $(next_item).position().top -= 155
-                $('.scroll_content').scrollTop(scroll_top_position)
-                $(current_item).removeClass(curr_class_name)
-                $(next_item).addClass(curr_class_name)
+            if next_item.length == 1
+              scroll_top_position = $('.scroll_content').scrollTop() + $(next_item).position().top -= 155
+              $('.scroll_content').scrollTop(scroll_top_position)
+              $(current_item).removeClass(curr_class_name)
+              $(next_item).addClass(curr_class_name)
 
 
     class FeedItemPagination
       load: ->
-        $('body').keypress (e) ->
-          unless $('.modal').is(':visible')
-            if e.key == 'h' or e.key == 'ArrowLeft'
-              e.preventDefault()
+        unless $('.modal').is(':visible')
+          Mousetrap.bind ['h', 'left', 'l', 'right'], (e) ->
+            if e.code == 'KeyH' or e.code == 'ArrowLeft'
               if previous_page_href = $('.previous-page').attr('href')
                 Turbolinks.visit(previous_page_href)
-            if e.key == 'l' or e.key == 'ArrowRight'
-              e.preventDefault()
+            if e.code == 'KeyL' or e.code == 'ArrowRight'
               if next_page_href = $('.next-page').attr('href')
                 Turbolinks.visit(next_page_href)
 
     class FeedItemSaving
       load: ->
-        $('body').keypress (e) ->
-          unless $('.modal').is(':visible')
-            if e.key == 's'
+        unless $('.modal').is(':visible')
+          Mousetrap.bind ['s'], (e) ->
+            if e.code == 'KeyS'
               $('.toggle_save_unsave').click()
+
+    class FeedItemUnread
+      load: ->
+        unless $('.modal').is(':visible')
+          Mousetrap.bind ['u'], (e) ->
+            if e.code == 'KeyU'
+              $('.mark_unread').click()
 
 
     feed_item_scrolling = new FeedItemScrolling
@@ -61,6 +64,9 @@ ready = ->
 
     feed_item_saving = new FeedItemSaving
     feed_item_saving.load()
+
+    feed_item_unread = new FeedItemUnread
+    feed_item_unread.load()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
