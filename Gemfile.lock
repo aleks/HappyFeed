@@ -180,6 +180,7 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    nprogress-rails (0.1.6.7)
     open_uri_redirections (0.2.1)
     pg (0.18.4)
     pry (0.10.3)
@@ -347,6 +348,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  nprogress-rails
   pg
   pry-rails
   quiet_assets

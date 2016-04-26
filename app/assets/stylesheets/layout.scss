@@ -26,6 +26,17 @@ a {
   }
 }
 
+#nprogress {
+  .peg {
+    display: none;
+  }
+  .bar {
+    background: #efefef;
+    height: 4px;
+    z-index: 1
+  }
+}
+
 .clearfix {
   clear: both;
 }
@@ -189,5 +200,3 @@ a {
     }
   }
 }
-
-

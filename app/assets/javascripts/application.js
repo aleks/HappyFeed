@@ -16,6 +16,8 @@
 //= require 'bind_with_delay'
 //= require 'Sortable'
 //= require 'mousetrap.min'
+//= require 'nprogress'
+//= require 'nprogress-turbolinks'
 //= require 'jquery-modal'
 //= require 'groups'
 //= require 'feeds'
@@ -26,3 +28,10 @@ $(function () {
   $('.notice').fadeOut(5000);
   $('.alert').fadeOut(5000);
 })
+
+NProgress.configure({
+  showSpinner: false,
+  ease: 'ease',
+  parent: '.scroll_content',
+  speed: 200
+});

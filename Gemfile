@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'htmlentities'
 gem 'gem_patching'
+gem 'nprogress-rails'
 
 # ElasticSearch
 # gem 'elasticsearch-model'
