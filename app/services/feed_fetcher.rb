@@ -56,7 +56,8 @@ class FeedFetcher
       item.html = fetched_content(entry)
       item.created_on_time = (entry.published ? entry.published.to_datetime : DateTime.now)
       item.save
-      item.preload_images
+
+      item.cleanup_item_content!
     end
 
     def fetched_content(entry)

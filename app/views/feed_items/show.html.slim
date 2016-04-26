@@ -33,4 +33,4 @@
       .feed_content
         h1.feed_item_title = HTMLEntities.new.decode @feed_item.title
 
-        = build_feed_item_content @feed_item.html
+        = @feed_item.html.html_safe

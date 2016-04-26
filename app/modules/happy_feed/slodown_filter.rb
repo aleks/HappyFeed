@@ -16,18 +16,15 @@ module HappyFeed
       def sanitize_config
         {
           elements: %w(
-            p br a sub sup strong em hr abbr s
+            span p br a sub sup strong em hr abbr s
             ul ol li
             blockquote pre code kbd
             h1 h2 h3 h4 h5 h6
             img object param del
           ),
           attributes: {
-            :all     => ['class', 'style', 'title', 'id'],
             'a'      => ['href', 'rel', 'name'],
-            'li'     => ['id'],
-            'sup'    => ['id'],
-            'img'    => ['src', 'title', 'alt', 'width', 'height'],
+            'img'    => ['src', 'title', 'alt'],
             'object' => ['width', 'height'],
             'param'  => ['name', 'value'],
             'embed'  => ['allowscriptaccess', 'width', 'height', 'src'],
