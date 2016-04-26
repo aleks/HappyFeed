@@ -137,14 +137,17 @@ a {
 }
 
 .options_header {
+  height: 100%; // fixes height "bug" in webkit
+  max-height: 45px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
   align-items: center;
-  line-height: 53px;
+  line-height: 45px;
   border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(100, 100, 100, 0.1);
 
   .pagination {
     flex-grow: 1;
