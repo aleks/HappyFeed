@@ -34,7 +34,7 @@ en:
       sidebar:
         add_feed: '<i class="ion-plus-round"></i> Add Feed'
         manage_groups: '<i class="ion-pricetags"></i> Manage Groups'
-  feed:
+  feed_item:
     is_unsaved: '<i class="ion-ios-star-outline"></i>'
     is_saved: '<i class="ion-ios-star"></i>'
     word_count: ' Words'

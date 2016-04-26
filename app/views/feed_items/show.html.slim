@@ -20,14 +20,14 @@
             li = link_to 'Mark unread', mark_unread_feed_item_path, remote: true, class: 'button mark_unread'
 
           - if current_user.item_starred?(@feed_item.id)
-            li.mark_as_link = link_to t('feed.is_saved').html_safe, mark_unsaved_feed_item_path,
+            li.mark_as_link = link_to t('feed_item.is_saved').html_safe, mark_unsaved_feed_item_path,
               remote: true, class: 'button toggle_save_unsave mark_unsaved'
           - else
-            li.mark_as_link = link_to t('feed.is_unsaved').html_safe, mark_saved_feed_item_path,
+            li.mark_as_link = link_to t('feed_item.is_unsaved').html_safe, mark_saved_feed_item_path,
               remote: true, class: 'button toggle_save_unsave mark_saved'
 
         .created_on_time  = l @feed_item.created_on_time
-        .word_count       = @feed_item.html.split(' ').count.to_s + t('feed..word_count')
+        .word_count       = @feed_item.html.split(' ').count.to_s + t('feed_item.word_count')
         .length_in_time   = time_ago_in_words(@feed_item.length_in_time.minutes.from_now)
 
       .feed_content
