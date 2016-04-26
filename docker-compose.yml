@@ -5,6 +5,8 @@ services:
     container_name: happyfeed_db
     ports:
       - "5432"
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
   web:
     env_file: .env
     container_name: happyfeed_web
