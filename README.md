@@ -44,3 +44,7 @@ http(s)://your-host.tld/fever
 ### Screenshot
 
 ![HappyFeed](https://raw.githubusercontent.com/aleks/HappyFeed/master/happyfeed.png)
+
+### Twitter
+
+Want to get notified about new HappyFeed features? Follow [@HappyFeedMe on Twitter](https://twitter.com/HappyFeedMe)!
