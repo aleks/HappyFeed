@@ -1,4 +1,4 @@
 #!/bin/sh
 cd /home/app/happyfeed
 exec 2>&1
-exec /sbin/setuser app bundle exec sidekiq -e production -P /tmp/sidekiq.pid
+exec /sbin/setuser app bundle exec sidekiq -c 6 -e production -P /tmp/sidekiq.pid
