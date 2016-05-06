@@ -25,10 +25,8 @@ describe Feed do
   it 'fetches FeedItems after_create' do
     feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom')
     expect(feed.feed_items.count).to eq 5
-    expect(feed.feed_items.last.title).to eq 'Blog Post 5'
 
-    # ensure that FeedItem#cleanup_item_content! downloaded the image of Blog Post 5
-    expect(feed.feed_items.last.html).to match /system\/dragonfly\/test/
+
   end
 
   it 'checks if the feed_url is reachable' do

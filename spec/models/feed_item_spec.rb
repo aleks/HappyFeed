@@ -11,6 +11,9 @@ describe FeedItem do
 
   before do
     stub_request(:get, "http://need.computer/posts.atom").to_return(File.new('spec/feed_response_raw.txt'))
+    stub_request(:get, "http://need.computer/feed_response_image.png")
+      .with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'})
+      .to_return(status: 200, body: File.new('spec/feed_response_image.png'))
   end
 
   context "FeedItem marking" do
@@ -67,7 +70,7 @@ describe FeedItem do
     end
   end
 
-  context "Word Count and Reading Time" do
+  context "FeedItem Word Count and Reading Time" do
     before :each do
       @feed_item = FactoryGirl.create(:feed_item)
     end
@@ -78,6 +81,16 @@ describe FeedItem do
 
     it 'can return the number of words per FeedItem' do
       expect(@feed_item.length_in_time).to eq 0.23846153846153847
+    end
+  end
+
+  context "FeedItem Cleanup" do
+    before :each do
+      @feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom')
+    end
+
+    it 'should download images from feed items and replace the img src' do
+      expect(@feed.feed_items.last.html).to match /system\/dragonfly\/test/
     end
   end
 
