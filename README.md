@@ -1,11 +1,16 @@
 # HappyFeed
+
+![HappyFeed](https://raw.githubusercontent.com/aleks/HappyFeed/master/happyfeed.png)
+
 #### A Fever API compatible RSS Server.
 
-This project is far from finished. I'm working on this in my free time and use it mainly as my own RSS reader/server. If you like to contribute, feel free to send a pull request. If you want to add bigger features or change things, please open an issue or contact me directly.
+This project is far from finished. I'm working on this in my free time and use it mainly as my own RSS reader/server. If you like to contribute, feel free to send a pull request. If you want to add bigger features or change things, please open an issue or contact me directly. If you just want to talk, you can find me on Twitter [@nd_cmptr](https://twitter.com/nd_cmptr).
 
 [![Build Status](https://travis-ci.org/aleks/HappyFeed.svg?branch=master)](https://travis-ci.org/aleks/HappyFeed)
 
-### Local setup
+### Installation
+
+#### Local setup
 
 ```
  bundle install
@@ -15,7 +20,7 @@ This project is far from finished. I'm working on this in my free time and use i
 
 Now go to http://localhost:3000/
 
-### Docker setup
+#### Docker setup
 
 You should edit the database passwords in docker-compose.yml. This will change in the future, but should be good enough for now.
 
@@ -83,10 +88,6 @@ If you want to use HappyFeed with a Fever-compatible RSS Reader (ReadKit, Reeder
 http(s)://your-host.tld/fever
 ```
 
-### Screenshot
-
-![HappyFeed](https://raw.githubusercontent.com/aleks/HappyFeed/master/happyfeed.png)
-
 ### Twitter
 
-Want to get notified about new HappyFeed features? Follow [@HappyFeedMe on Twitter](https://twitter.com/HappyFeedMe)!
+Want to get notified about new HappyFeed features? Follow [@HappyFeedMe](https://twitter.com/HappyFeedMe) or me [@nd_cmptr](https://twitter.com/nd_cmptr) on Twitter! :)
