@@ -30,7 +30,10 @@ Server: nginx/1.8.0 + Phusion Passenger 5.0.9
     <link rel="alternate" type="text/html" href="http://need.computer/post/5/"/>
     <url>http://need.computer/post/5/</url>
     <title>Blog Post 5</title>
-    <content type="html">Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</content>
+    <content type="html">
+      &lt;img src="http://need.computer/feed_response_image.png" &gt;
+      Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    </content>
     <author>
       <name>Aleks</name>
       <uri>http://need.computer/</uri>

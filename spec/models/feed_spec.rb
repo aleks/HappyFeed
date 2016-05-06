@@ -16,12 +16,19 @@ describe Feed do
 
   before do
     stub_request(:get, "http://need.computer/posts.atom").to_return(File.new('spec/feed_response_raw.txt'))
+    stub_request(:get, "http://need.computer/feed_response_image.png")
+      .with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'})
+      .to_return(status: 200, body: File.new('spec/feed_response_image.png'))
   end
 
 
   it 'fetches FeedItems after_create' do
     feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom')
     expect(feed.feed_items.count).to eq 5
+    expect(feed.feed_items.last.title).to eq 'Blog Post 5'
+
+    # ensure that FeedItem#cleanup_item_content! downloaded the image of Blog Post 5
+    expect(feed.feed_items.last.html).to match /system\/dragonfly\/test/
   end
 
   it 'checks if the feed_url is reachable' do
