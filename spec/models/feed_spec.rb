@@ -21,17 +21,7 @@ describe Feed do
 
   it 'fetches FeedItems after_create' do
     feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom')
-    expect(feed.feed_items.any?).to be true
-  end
-
-  it 'fetches FeedItems after_create if last_updated_on_time is older than 1 hour' do
-    feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom', last_updated_on_time: DateTime.now - 2.hours)
-    expect(feed.feed_items.any?).to be true
-  end
-
-  it 'does not fetch FeedItems after_create if last_updated_on_time is within the last hour' do
-    feed = FactoryGirl.create(:feed, feed_url: 'http://need.computer/posts.atom', last_updated_on_time: DateTime.now - 25.minutes)
-    expect(feed.feed_items.any?).to be false
+    expect(feed.feed_items.count).to eq 5
   end
 
   it 'checks if the feed_url is reachable' do
