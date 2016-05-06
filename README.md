@@ -26,11 +26,53 @@ cd happyfeed
 
 # Build Image and Start
 docker-compose build
-docker-compose up
+docker-compose up # add -d to run in background
 
 # Run Database migration
 docker-compose run web bundle exec rake db:create
 docker-compose run web bundle exec rake db:migrate
+```
+
+### Updating
+
+#### Docker
+
+Go to your HappyFeed directory and do the following:
+
+```
+# Stop HappyFeed containers
+docker-compose down
+
+# Delete the old containers
+docker-compose rm
+
+# Pull updates from GitHub
+git pull
+
+# Rebuild both containers
+docker-compose build
+
+# Start
+docker-compose up
+
+# Run database migrations (there will be no output if nothing changed!)
+docker-compose run web bundle exec rake db:migrate
+```
+
+```docker-compose.yml``` defines two volumes for db and web, so your database should still be there. This will change, if there is an easy way to export / import subscriptions.
+
+#### Without Docker
+
+Go to your HappyFeed directory and do the following:
+
+```
+# Pull updates from GitHub
+git pull
+
+# Run database migrations (there will be no output if nothing changed!)
+bundle exec rake db:migrate
+
+# Restart your webserver
 ```
 
 ### Usage
