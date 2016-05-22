@@ -25,15 +25,17 @@ Now go to http://localhost:3000/
 You should edit the database passwords in docker-compose.yml. This will change in the future, but should be good enough for now.
 
 ```
-# Clone Repository
+# 1. Clone Repository
 git clone git@github.com:aleks/HappyFeed.git happyfeed
 cd happyfeed
 
-# Build Image and Start
+# 2. Edit .env.production
+
+# 3. Build Image and Start
 docker-compose build
 docker-compose up # add -d to run in background
 
-# Run Database migration
+# 4. Run Database migration
 docker-compose run web bundle exec rake db:create
 docker-compose run web bundle exec rake db:migrate
 ```
