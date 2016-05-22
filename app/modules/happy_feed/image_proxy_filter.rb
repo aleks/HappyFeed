@@ -15,8 +15,9 @@ module HappyFeed
             img['height'] = nil
 
             # Assign real src as data attribute
+            http = Rails.env.development? ? 'http://' : 'https://'
             img['src'] = [
-              "https://", ENV['SITE_URL'],
+              http, ENV['SITE_URL'],
               Dragonfly.app.remote_url_for(local_image)
             ].join
 
