@@ -7,6 +7,8 @@ class FeedItem < ActiveRecord::Base
 
   validates :feed_id, :title, :url, presence: true
 
+  scope :clean, -> { where cleaned: true }
+
   def mark_as(mark, user_id)
     case mark
       when 'read'
@@ -25,11 +27,11 @@ class FeedItem < ActiveRecord::Base
   end
 
   def next_item
-    FeedItem.where('id > ? AND feed_id = ?', self.id, self.feed_id).limit(1).first
+    FeedItem.clean.where('id > ? AND feed_id = ?', self.id, self.feed_id).limit(1).first
   end
 
   def previous_item
-    FeedItem.where('id < ? AND feed_id = ?', self.id, self.feed_id).last
+    FeedItem.clean.where('id < ? AND feed_id = ?', self.id, self.feed_id).last
   end
 
   def word_count
@@ -50,7 +52,7 @@ class FeedItem < ActiveRecord::Base
       html = filter.call(self.html)
       new_html = html[:output].to_s.html_safe
 
-      update_attribute(:html, new_html)
+      update_attributes(html: new_html, cleaned: true)
     end
   end
 

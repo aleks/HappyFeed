@@ -57,7 +57,7 @@ class FeedFetcher
       item.created_on_time = (entry.published ? entry.published.to_datetime : DateTime.now)
       item.save
 
-      item.cleanup_item_content!
+      FeedItemJob.perform_later(item.id) # Fetch images later
     end
 
     def fetched_content(entry)

@@ -7,7 +7,7 @@ class FeedsController < ApplicationController
 
   def show
     @feed = current_user.feeds.find(params[:id])
-    @feed_items = @feed.feed_items.order('id DESC').page(params[:page])
+    @feed_items = @feed.feed_items.clean.order('id DESC').page(params[:page])
   end
 
   def new

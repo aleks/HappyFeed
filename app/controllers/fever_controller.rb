@@ -94,11 +94,11 @@ class FeverController < ApplicationController
 
     def items
       if params[:since_id]
-        feed_items = @api_user.feed_items.where('feed_items.id > ?', params[:since_id])
+        feed_items = @api_user.feed_items.clean.where('feed_items.id > ?', params[:since_id])
       elsif params[:with_ids]
-        feed_items = @api_user.feed_items.where('feed_items.id IN (?)', params[:with_ids].split(','))
+        feed_items = @api_user.feed_items.clean.where('feed_items.id IN (?)', params[:with_ids].split(','))
       else
-        feed_items = @api_user.feed_items
+        feed_items = @api_user.feed_items.clean
       end
 
       items = []
@@ -142,7 +142,7 @@ class FeverController < ApplicationController
     def mark_feed(params)
       if params[:as] == "read"
         feed          = @api_user.feeds.find(params[:id])
-        feed_item_ids = feed.feed_items.where('created_on_time <= ?', Time.at(params[:before].to_i)).pluck(:id)
+        feed_item_ids = feed.feed_items.clean.where('created_on_time <= ?', Time.at(params[:before].to_i)).pluck(:id)
 
         feed_item_ids.each do |feed_item_id|
           FeedItemRead.create(user_id: @api_user.id, feed_id: feed.id, feed_item_id: feed_item_id)
@@ -153,7 +153,7 @@ class FeverController < ApplicationController
     def mark_group(params)
       if params[:as] == "read"
         group = @api_user.groups.find(params[:id])
-        feed_items = group.feed_items.where('created_on_time <= ?', Time.at(params[:before].to_i))
+        feed_items = group.feed_items.clean.where('created_on_time <= ?', Time.at(params[:before].to_i))
 
         feed_items.each do |feed_item|
           FeedItemRead.create(user_id: @api_user.id, feed_id: feed_item.feed_id, feed_item_id: feed_item.id)
@@ -162,7 +162,7 @@ class FeverController < ApplicationController
     end
 
     def mark_item(params)
-      @api_user.feed_items.find(params[:id]).mark_as(params[:as], @api_user.id)
+      @api_user.feed_items.clean.find(params[:id]).mark_as(params[:as], @api_user.id)
     end
 
 end
