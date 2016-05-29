@@ -19,6 +19,7 @@
 //= require 'nprogress'
 //= require 'nprogress-turbolinks'
 //= require 'jquery-modal'
+//= require 'jquery.inview.min'
 //= require 'groups'
 //= require 'feeds'
 //= require 'feed_items'

@@ -8,6 +8,11 @@ ready = ->
       iframe_height = Math.round((iframe_width/16)*9)
       $(this).height(iframe_height)
 
+    # Load images as soon as they're visible to the user
+    $('body').on 'inview', 'img[data-original]', ->
+      image = $(this)
+      image.attr 'src', image.data('original')
+      image.removeAttr 'data-original'
 
     # Keyboard Shortcuts
     class FeedItemScrolling

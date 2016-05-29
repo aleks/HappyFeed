@@ -4,29 +4,41 @@ module HappyFeed
     class Filter < HTML::Pipeline::Filter
       def call
         doc.search("img").each do |img|
+          next if img['src'].nil?
+
+          http = Rails.env.development? ? 'http://' : 'https://'
+
           begin
-            next if img['src'].nil?
-
+            # Fetch remote image
             remote_image = Dragonfly.app.fetch_url(img['src'].strip)
-            local_image = remote_image.store
+            if remote_image.image?
 
-            # Remove width and height
-            img['width'] = nil
-            img['height'] = nil
+              # Store orignal and thumbnail
+              local_image = remote_image.store
+              thumb_image = remote_image.thumb('50x50').store
 
-            # Assign real src as data attribute
-            http = Rails.env.development? ? 'http://' : 'https://'
+              img['width'] = remote_image.width
+              img['height'] = remote_image.height
+
+              # Add thumbnail src
+              img['data-original'] = [
+                http, ENV['SITE_URL'],
+                Dragonfly.app.remote_url_for(local_image)
+              ].join
+
+              # Add original src
+              img['src'] = [
+                http, ENV['SITE_URL'],
+                Dragonfly.app.remote_url_for(thumb_image)
+              ].join
+            end
+          rescue Exception
             img['src'] = [
-              http, ENV['SITE_URL'],
-              Dragonfly.app.remote_url_for(local_image)
+              http, ENV['SITE_URL'], '/image_fetching_failed.png'
             ].join
-
-            wrap_image(img)
-          rescue Errno::ECONNREFUSED
-            next
           end
+          wrap_image(img)
         end
-
         doc
       end
 
