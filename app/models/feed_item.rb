@@ -42,18 +42,4 @@ class FeedItem < ActiveRecord::Base
     word_count.to_f / wpm.to_f
   end
 
-  def cleanup_item_content!
-    if self.html.present?
-      filters = [
-        HappyFeed::SlodownFilter::Filter,
-        HappyFeed::ImageProxyFilter::Filter
-      ]
-      filter = HTML::Pipeline.new(filters)
-      html = filter.call(self.html)
-      new_html = html[:output].to_s.html_safe
-
-      update_attributes(html: new_html, cleaned: true)
-    end
-  end
-
 end

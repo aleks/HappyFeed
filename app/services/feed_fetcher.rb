@@ -22,6 +22,21 @@ class FeedFetcher
     Feed.all.each {|feed| FeedFetcherJob.perform_later(feed.id) }
   end
 
+  def self.cleanup_item_content(feed_item_id)
+    feed_item = FeedItem.find(feed_item_id)
+    if feed_item.html.present?
+      filters = [
+        HappyFeed::SlodownFilter::Filter,
+        HappyFeed::ImageProxyFilter::Filter
+      ]
+      filter = HTML::Pipeline.new(filters)
+      html = filter.call(feed_item.html)
+      new_html = html[:output].to_s.html_safe
+
+      feed_item.update_attributes(html: new_html, cleaned: true)
+    end
+  end
+
   private
 
     def update_feed_info!
@@ -52,12 +67,15 @@ class FeedFetcher
         title: entry.title,
         url: entry.url,
       )
-      item.author = entry.author
-      item.html = fetched_content(entry)
-      item.created_on_time = (entry.published ? entry.published.to_datetime : DateTime.now)
-      item.save
 
-      FeedItemJob.perform_later(item.id) # Fetch images later
+      unless item.cleaned
+        item.author = entry.author
+        item.html = fetched_content(entry)
+        item.created_on_time = (entry.published ? entry.published.to_datetime : DateTime.now)
+        item.save
+
+        FeedItemJob.perform_later(item.id) # Fetch images later
+      end
     end
 
     def fetched_content(entry)

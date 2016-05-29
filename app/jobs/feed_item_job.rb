@@ -3,7 +3,7 @@ class FeedItemJob < ActiveJob::Base
 
   def perform(feed_item_id)
     ActiveRecord::Base.connection_pool.with_connection do
-      FeedItem.find(feed_item_id).cleanup_item_content!
+      FeedFetcher.cleanup_item_content(feed_item_id)
     end
   end
 end

@@ -10,7 +10,7 @@
                 i class="ion-record"
               - else
                 i class="ion-ios-circle-outline"
-            = link_to feed.title, feed
+            = link_to (feed.title || 'Fetching...'), feed
     - else
       ul id="group_#{group.id}" data-group-id="#{group.id}"
         li.group_item.group_item_placeholder
