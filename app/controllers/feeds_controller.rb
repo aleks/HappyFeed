@@ -3,6 +3,12 @@ class FeedsController < ApplicationController
 
   def index
     @feeds = current_user.feeds.order('title').page(params[:page])
+    @feeds_all = current_user.feeds.select(:id, :title, :feed_url, :site_url).all.order('title')
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show
